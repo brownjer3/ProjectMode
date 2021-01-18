@@ -35,7 +35,7 @@ ForeignKey attrs = commenter_id, project_id,
 
 Likes (?) - need to look up Commentable article
 
-Module
+Phase
 has_many :projects
 has_many :users, through: :projects
 

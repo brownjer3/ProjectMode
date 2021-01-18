@@ -6,7 +6,8 @@ class CreateProjects < ActiveRecord::Migration[6.0]
       t.string :youtube_link
       t.string :github_link
       t.string :blog_link
-      t.belongs_to :module, null: false, foreign_key: true
+      t.belongs_to :phase, null: false, foreign_key: true
+      t.integer :owner_id
 
       t.timestamps
     end
