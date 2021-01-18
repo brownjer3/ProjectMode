@@ -12,6 +12,15 @@ class User < ApplicationRecord
   # has_many :cohorts, foreign_key: "lead_id", class_name: "Cohort"
   
   has_secure_password 
+
+  def self.create_canvas_user(auth)
+    User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
+      u.name = auth['info']['name']
+      u.email = auth['info']['email']
+      u.password = SecureRandom.hex(16)
+    end
+  end
+
 end
 
  

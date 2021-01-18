@@ -1,0 +1,26 @@
+
+    <h1 class="text-center">Login</h1>
+        <%= form_for @user do |f| %>
+            <div class="row g-3">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <%= f.label :email %>
+                    <%= f.email_field :email %>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <%= f.label :password %>
+                    <%= f.password_field :password %>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <%= f.submit "Login", class: "btn btn-primary col-md-12" %>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        <% end %>
+        <br/>
+        <%= link_to 'Login with Canvas (TBD)', '/auth/canvas' %>
+        <p class='text-center'>New here? <%= link_to "Sign Up", "/signup" %></p>

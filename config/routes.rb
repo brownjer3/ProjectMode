@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get "/signup", to: "users#new"
   post "/signup", to: "users#create" #this is only needed for failed signup attempts if we still want the link to be /signup and not 'users/new'
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
 
   resources :cohorts
   resources :phases
