@@ -73,5 +73,5 @@ ActiveRecord::Schema.define(version: 2021_01_18_232707) do
   add_foreign_key "likes", "projects"
   add_foreign_key "likes", "users"
   add_foreign_key "projects", "phases"
-  add_foreign_key "users", "cohorts"
+  
 end

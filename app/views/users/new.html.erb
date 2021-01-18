@@ -1,15 +1,14 @@
 <h1>SIGN UP</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for(@user, url: "/signup") do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
-
+    <br/><br/>
     <%= f.label :email %>
-    <%= f.email_field :email %>
-
+    <%= f.email_field :email, require: true %>
+    <br/><br/>
     <%= f.label :password %>
     <%= f.password_field :password %>
-
+    <br/><br/>
     <%= f.submit "Sign Up" %>
-
 <% end %>

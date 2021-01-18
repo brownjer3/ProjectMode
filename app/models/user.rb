@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :liked_projects, through: :likes, source: :project
 
   # for the student
-  belongs_to :cohort
+  belongs_to :cohort, optional: true
 
   
   # for the lead

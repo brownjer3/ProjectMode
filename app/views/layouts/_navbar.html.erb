@@ -10,7 +10,7 @@
             <a class="nav-link" href="/error">View all Projects</a>
             <a class="nav-link" href="/error">Add Project</a>
             <%= link_to "Log Out", '/logout', method:'delete', class: "nav-link" %>
-            <%= link_to current_user.name, user_path(@user), class: %w(nav-link position-absolute top-50 end-0 translate-middle) %>
+            <%= link_to current_user.name, user_path(current_user), class: %w(nav-link position-absolute top-50 end-0 translate-middle) %>
           </div>
         </div>
       </div>
