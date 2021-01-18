@@ -13,7 +13,7 @@ later----
 *Lead
 - has_many :students, through: :cohort, source: :students
 
-Attrs= email, password_digest, first_name, last_name, avartar, cohort, lead/type(student,lead,guest)
+Attrs= email, password_digest, first_name, last_name, avatar, cohort, lead/type(student,lead,guest)
 ForeignKey Attrs = cohort_id
 Stretch= lead, location
 
