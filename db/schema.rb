@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_163738) do
+ActiveRecord::Schema.define(version: 2021_01_18_175757) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "focus"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2021_01_18_163738) do
     t.integer "cohort_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uid"
+    t.string "provider"
     t.index ["cohort_id"], name: "index_users_on_cohort_id"
   end
 
