@@ -1,21 +1,21 @@
 <h1 class="text-center">Login</h1>
-    <%= form_for @user do |f| %>
+    <%= form_tag("/login", method: :post) do %>
         <div class="row g-3">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <%= f.label :email %>
-                <%= f.email_field :email %>
+                <%= label_tag :email %>
+                <%= email_field_tag :email %>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <%= f.label :password %>
-                <%= f.password_field :password %>
+                <%= label_tag :password %>
+                <%= password_field_tag :password, nil %>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <%= f.submit "Login", class: "btn btn-primary col-md-12" %>
+                <%= submit_tag "Login", class: "btn btn-primary col-md-12" %>
             </div>
             <div class="col-md-4"></div>
         </div>

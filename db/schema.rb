@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_175757) do
+ActiveRecord::Schema.define(version: 2021_01_18_232707) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "focus"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_01_18_175757) do
     t.string "password_digest"
     t.string "name"
     t.boolean "lead", default: false
-    t.integer "cohort_id", null: false
+    t.integer "cohort_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "uid"
