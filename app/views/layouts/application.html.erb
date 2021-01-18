@@ -10,6 +10,10 @@
   </head>
 
   <body>
+
+    <%= button_to "Login with Canvas", '/auth/canvas' %>
+    <%= link_to "Show my stuff", user_path(User.first) %>
+
     <%= yield %>
   </body>
 </html>

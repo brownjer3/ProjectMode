@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
+        @courses = CanvasApi.new("https://learning.flatiron.com/api/v1/courses").response
     end
 
 
