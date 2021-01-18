@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_001128) do
+ActiveRecord::Schema.define(version: 2021_01_18_163738) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "focus"
-    t.datetime "start_date"
-    t.integer "lead_id"
+    t.date "start_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -27,6 +26,15 @@ ActiveRecord::Schema.define(version: 2021_01_18_001128) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_comments_on_project_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_likes_on_project_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "phases", force: :cascade do |t|
@@ -51,8 +59,7 @@ ActiveRecord::Schema.define(version: 2021_01_18_001128) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
     t.boolean "lead", default: false
     t.integer "cohort_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -61,6 +68,8 @@ ActiveRecord::Schema.define(version: 2021_01_18_001128) do
   end
 
   add_foreign_key "comments", "projects"
+  add_foreign_key "likes", "projects"
+  add_foreign_key "likes", "users"
   add_foreign_key "projects", "phases"
   add_foreign_key "users", "cohorts"
 end
