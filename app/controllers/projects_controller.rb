@@ -23,10 +23,15 @@ class ProjectsController < ApplicationController
         find_project
     end
 
-    def update
+    def update #add validation check here
         find_project
         @project.update(project_params)
         redirect_to project_path(@project)
+    end
+
+    def destroy
+        find_project.destroy
+        redirect_to projects_path
     end
 
     private

@@ -1,3 +1,4 @@
 <%= content_tag(:h1, @project.name, class: "text-center") %>
 
 <%= link_to "Edit", edit_project_path(@project) %>
+<%= link_to "Delete", project_path(@project), method: :delete %>
