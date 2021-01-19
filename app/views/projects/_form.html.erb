@@ -1,0 +1,16 @@
+<%= content_tag(:h1, "Create a New Project", class: "text-center") %>
+
+<%= form_for @project do |f| %>
+<%= f.hidden_field :user_id %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :desc %>
+    <%= f.text_area :desc %>
+
+    <%= f.label :phase %>
+    <%= f.collection_select :phase_id, Phase.all, :id, :name %>
+
+    <%= f.submit %>
+
+<% end %>
