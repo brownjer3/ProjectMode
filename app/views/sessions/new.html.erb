@@ -1,25 +1,27 @@
-<h1 class="text-center">Login</h1>
+<%= content_tag(:h1, "Login", class: "text-center") %>
     <%= form_tag("/login", method: :post) do %>
-        <div class="row g-3">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
+        <%= content_tag(:div, class: ["row", "g-3"]) do %>
+            <%= content_tag(:div, nil, class: "col-md-4") %>
+            <%= content_tag(:div, class: "col-md-4") do %>
                 <%= label_tag :email %>
                 <%= email_field_tag :email %>
-            </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-4") %>
+            <%= content_tag(:div, nil, class: "col-md-4") %>
+            <%= content_tag(:div, class: "col-md-4") do %>
                 <%= label_tag :password %>
                 <%= password_field_tag :password, nil %>
-            </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-4") %>
+            <%= content_tag(:div, nil, class: "col-md-4") %>
+            <%= content_tag(:div, class: "col-md-4") do %>
                 <%= submit_tag "Login", class: "btn btn-primary col-md-12" %>
-            </div>
-            <div class="col-md-4"></div>
-        </div>
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-4") %>
+        <% end %>
     <% end %>
     <br/>
-    <%= link_to 'Login with Canvas (TBD)', '/auth/canvas' %>
-    <p class='text-center'>New here? <%= link_to "Sign Up", "/signup" %></p>
+    <%= content_tag(:div, class: "text-center") do %>
+        <%= link_to 'Login with Canvas (TBD)', '/auth/canvas' %>
+        <%= content_tag(:p, "New here? Sign up") %>
+    <% end %>

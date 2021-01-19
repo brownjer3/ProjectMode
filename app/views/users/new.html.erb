@@ -1,14 +1,32 @@
-<h1>SIGN UP</h1>
-
-<%= form_for(@user, url: "/signup") do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br/><br/>
-    <%= f.label :email %>
-    <%= f.email_field :email, require: true %>
-    <br/><br/>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br/><br/>
-    <%= f.submit "Sign Up" %>
-<% end %>
+<%= content_tag(:h1, "Sign Up", class: "text-center") %>
+<br/><br/>
+    <%= form_for(@user, url: "/signup") do |f| %>
+        <%= content_tag(:div, class: ["row", "g-3"]) do %>
+            <%= content_tag(:div, nil, class: "col-md-5") %>
+            <%= content_tag(:div, class: "col-md-5") do %>
+                <%= f.label :name %><br/>
+                <%= f.text_field :name %>
+                <br/><br/>
+                <% end %>
+            <%= content_tag(:div, nil, class: "col-md-2") %>
+            <%= content_tag(:div, nil, class: "col-md-5") %>
+            <%= content_tag(:div, class: "col-md-5") do %>
+                <%= f.label :email %><br/>
+                <%= f.email_field :email, require: true %>
+                <br/><br/>
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-2") %>
+            <%= content_tag(:div, nil, class: "col-md-5") %>
+            <%= content_tag(:div, class: "col-md-5") do %>
+                <%= f.label :password %><br/>
+                <%= f.password_field :password %>
+                <br/><br/>
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-2") %>
+            <%= content_tag(:div, nil, class: "col-md-5") %>
+            <%= content_tag(:div, nil, class: "col-md-5") do %>
+                <%= f.submit "Sign Up" %>
+            <% end %>
+        <% end %>
+    <% end %>
+    
