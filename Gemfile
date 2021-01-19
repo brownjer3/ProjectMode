@@ -27,6 +27,7 @@ gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-canvas'
 gem 'httparty'
 gem 'youtube_addy'
+gem "omniauth-google-oauth2"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

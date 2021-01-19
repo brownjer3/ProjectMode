@@ -9,16 +9,15 @@ class User < ApplicationRecord
   # has_many :cohorts, foreign_key: "lead_id", class_name: "Cohort"
   has_secure_password 
 
-  def self.create_canvas_user(auth)
+  def self.create_google_user(auth)
     User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
-      u.name = auth['info']['name']
+      u.uid = auth['uid']
+      u.provider = auth['provider']
+      u.first_name = auth['info']['first_name']
+      u.last_name = auth['info']['last_name']
       u.email = auth['info']['email']
       u.password = SecureRandom.hex(16)
-      #u.avatar = auth["extra"]["raw_info"]["avatar_url"]
-      #u.cohort = auth["extra"]["raw_info"]["avatar_url"]
-      #u.lead = true if auth[]
-      #u.uid = auth['uid']
-      #u.provider = auth['provider']
+      u.image = auth['info']['image']
     end
   end
 

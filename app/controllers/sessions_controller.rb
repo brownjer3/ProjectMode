@@ -19,6 +19,17 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
+        user = User.create_google_user(auth)
+        if user.valid?
+            session[:user_id] = user.id
+            redirect_to user_path(user)
+        else
+            flash[:message] = user.errors.full_messages.join(", ")
+            redirect_to '/'
+        end
+    end
+
+    def canvas_omniauth
         user = User.create_canvas_user(auth)
         if user.valid?
             session[:user_id] = user.id

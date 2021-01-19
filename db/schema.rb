@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_232707) do
+ActiveRecord::Schema.define(version: 2021_01_19_201719) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "focus"
@@ -59,13 +59,15 @@ ActiveRecord::Schema.define(version: 2021_01_18_232707) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.string "name"
     t.boolean "lead", default: false
     t.integer "cohort_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "uid"
     t.string "provider"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "image"
     t.index ["cohort_id"], name: "index_users_on_cohort_id"
   end
 
@@ -73,5 +75,5 @@ ActiveRecord::Schema.define(version: 2021_01_18_232707) do
   add_foreign_key "likes", "projects"
   add_foreign_key "likes", "users"
   add_foreign_key "projects", "phases"
-  
+  add_foreign_key "users", "cohorts"
 end
