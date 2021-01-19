@@ -25,7 +25,8 @@ gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-canvas'
-gem "httparty"
+gem 'httparty'
+gem 'youtube_addy'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -1,14 +1,23 @@
 <%= content_tag(:h1, "Create a New Project", class: "text-center") %>
 
 <%= form_for @project do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %><br/>
 
-    <%= f.label :desc %>
-    <%= f.text_area :desc %>
+    <%= f.label :desc %><br/>
+    <%= f.text_area :desc %><br/>
 
-    <%= f.label :phase %>
-    <%= f.collection_select :phase_id, Phase.all, :id, :name %>
+    <%= f.label :phase %><br/>
+    <%= f.collection_select :phase_id, Phase.all, :id, :name %><br/>
+
+    <%= f.label :youtube_link %><br/>
+    <%= f.text_field :youtube_link %><br/>
+
+    <%= f.label :blog_link %><br/>
+    <%= f.text_field :blog_link %><br/>
+
+    <%= f.label :github_link %><br/>
+    <%= f.text_field :github_link %><br/>
 
     <%= f.submit %>
 
