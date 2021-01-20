@@ -1,3 +1,9 @@
-<h1>SHOW PAGE</h1>
+<%= content_tag(:h1, class: "text-center") do %>
+    <%= "#{display_name(@user)}'s Profile Page" %>
+<% end %>
 
-WELCOME: <%= display_name(@user) %>
+<ul>
+    <% @projects.each do |p| %>
+        <li><%= link_to p.name, project_path(p) %></li>
+    <% end %>
+</ul>

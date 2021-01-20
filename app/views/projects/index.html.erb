@@ -1,6 +1,5 @@
-<h1>Project Index page</h1>
+<%= content_tag(:h1, "Project Index Page", class: "text-center") %>
 
-<% @projects.each do |p| %>
-    <%= render partial: "project", locals: {p: p} %>
+<div class="row row-cols-1 row-cols-md-3 g-4">
     <%= render partial: "project", collection: @projects %>
-<% end %>
+</div>

@@ -15,6 +15,10 @@ class ProjectsController < ApplicationController
         end
     end
 
+    def index
+        @projects = Project.all
+    end
+
     def show
         find_project
     end
@@ -31,7 +35,7 @@ class ProjectsController < ApplicationController
 
     def destroy
         find_project.destroy
-        redirect_to projects_path
+        redirect_to user_path(User.find_by_id(session[:user_id]))
     end
 
     private

@@ -1,12 +1,1 @@
-<%= content_tag(:h1, @project.name, class: "text-center") %>
-<%= content_tag(:h3, @project.desc, class: "text-center") %>
-
-<% if false %>
-    this should work... it's generating a string, need to remove the quotes
-    <%= YouTubeAddy.youtube_embed_url(@project.youtube_link, 420, 315) %>
-<% end %>
-    <iframe src='https://www.youtube.com/embed/<%= youtube_id(@project) %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
-
-
-<%= link_to "Edit", edit_project_path(@project) %>
-<%= link_to "Delete", project_path(@project), method: :delete %>
+<%= render partial: "project", locals: {project: @project} %>
