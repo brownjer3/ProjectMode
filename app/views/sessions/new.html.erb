@@ -22,6 +22,8 @@
     <% end %>
     <br/>
     <%= content_tag(:div, class: "text-center") do %>
-        <%= link_to 'Login with Canvas (TBD)', '/auth/canvas' %>
-        <%= content_tag(:p, "New here? Sign up") %>
+        <%= link_to "Login with Google", '/auth/google_oauth2', method: 'post', class: "nav-link" %>
+        <%= content_tag(:p, class: "text-center") do %>
+            New here? <%= link_to "Sign Up", new_user_path %>
+        <% end %>
     <% end %>

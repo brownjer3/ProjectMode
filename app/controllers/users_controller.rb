@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     def new
         @user = User.new
-        render: :new, layout: "layouts/starting_session"
+        render action: :new, layout: "layouts/logged_out"
     end
 
     def create
@@ -21,6 +21,6 @@ class UsersController < ApplicationController
 
     private 
     def user_params
-        params.require(:user).permit(:name, :email, :password)
+        params.require(:user).permit(:first_name, :email, :password)
     end
 end
