@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     def new
         @user = User.new
+        render: :new, layout: "layouts/starting_session"
     end
 
     def create

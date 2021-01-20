@@ -1,0 +1,13 @@
+<% if instance.errors.any? %>
+    <h2><%= pluralize(instance.errors.count, "error")  %>:</h2>
+        <ul>
+            <% instance.errors.full_messages.each do |message| %>
+                <%= content_tag( :li, message) %>
+            <% end %>
+        </ul>
+<% end %>
+
+<% if false %>
+    # for future use on any page that i want to show errors
+    <%= render "layouts/error_messages", locals: {instance: @XXXXXX} %>
+<% end %>
