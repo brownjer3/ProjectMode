@@ -15,7 +15,7 @@
     phase_4 = Phase.create(name: "Rails & Javascript")
     phase_5 = Phase.create(name: "Final")
     
-    jerry = User.create(first_name: "Jerry", password: "password", cohort: cohort_1)
+    jerry = User.create(first_name: "Jerry", email: "jbtest@test.com", password: "password", cohort: cohort_1)
     joma = User.create(first_name: "Joma", password: "password", cohort: cohort_2)
     rebecca = User.create(first_name: "Rebecca", password: "password", cohort: cohort_1)
     robert = User.create(first_name: "Robert", password: "password", cohort: cohort_3)

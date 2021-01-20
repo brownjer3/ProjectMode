@@ -1,5 +1,7 @@
 <%= content_tag(:h1, "Project Index Page", class: "text-center") %>
 
+
+<%= content_tag(:h3, "Projects from your classmates") %>
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    <%= render partial: "project", collection: @projects %>
+    <%= render partial: "project", collection: projects(current_user.cohort) %>
 </div>

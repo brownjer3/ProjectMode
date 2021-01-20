@@ -1,0 +1,11 @@
+<%= content_tag(:h1, class: "text-center") do %>
+    <%= "#{@phase.name} Projects" %>
+<% end %>
+
+<%= content_tag(:p, class: "text-center") do %>
+    <%= "made with: NEED PHASE ATTRIBUTES" %>
+<% end %>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <%= render partial: "projects/project", collection: @projects %>
+</div>
