@@ -9,14 +9,14 @@
     <div class="card border-0">
     <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
 
-    <div class="card-body border p-2">
-        <span>
-        <%= content_tag(:small, class: %w(card-text text-muted)) do %>
-            <%= like_count(project) %>
-            <%= likers_modal %>
-        <% end %>
-        </span>
-    </div>
+        <div class="card-body border p-2">
+            <span>
+            <%= content_tag(:small, class: %w(card-text text-muted)) do %>
+                <%= like_count(project) %>
+                <%= likers_modal %>
+            <% end %>
+            </span>
+        </div>
 
         <div class="card-body">
             <%= content_tag(:h5, class: "card-text") do %>
@@ -34,5 +34,6 @@
     </div>
 </div>
 
-<%= render "likes/likers_modal" %>
+<%= render partial: "likes/likers_modal", locals: {project: project} %>
+
 
