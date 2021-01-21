@@ -14,6 +14,9 @@
             <%= content_tag(:small, class: %w(card-text text-muted)) do %>
                 <%= like_count(project) %>
                 <%= likers_modal %>
+                 | 
+                <%= comment_count(project) %>
+                <%= commenters_modal %>
             <% end %>
             </span>
         </div>
@@ -35,5 +38,6 @@
 </div>
 
 <%= render partial: "likes/likers_modal", locals: {project: project} %>
+<%= render partial: "comments/commenters_modal", locals: {project: project} %>
 
 

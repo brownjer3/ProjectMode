@@ -16,4 +16,12 @@ module ProjectsHelper
         link_to "likes", "#likers", class: %w(text-reset text-decoration-none fw-normal), data: {bs_toggle: "modal"}
     end
 
+    def comment_count(project)
+        project.comments.count
+    end
+
+    def commenters_modal
+        link_to "comments", "#commenters", class: %w(text-reset text-decoration-none fw-normal), data: {bs_toggle: "modal"}
+    end
+
 end
