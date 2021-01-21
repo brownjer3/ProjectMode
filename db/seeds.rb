@@ -16,9 +16,12 @@
     phase_5 = Phase.create(name: "Final")
     
     jerry = User.create(first_name: "Jerry", email: "jbtest@test.com", password: "password", cohort: cohort_1)
-    joma = User.create(first_name: "Joma", password: "password", cohort: cohort_2)
+    joma = User.create(first_name: "Joma", password: "password", cohort: cohort_1)
     rebecca = User.create(first_name: "Rebecca", password: "password", cohort: cohort_1)
-    robert = User.create(first_name: "Robert", password: "password", cohort: cohort_3)
+    robert = User.create(first_name: "Robert", password: "password", cohort: cohort_1)
+    natalia = User.create(first_name: "Natalia", password: "password", cohort: cohort_1)
+    dina = User.create(first_name: "Dina", password: "password", cohort: cohort_2)
+    guy = User.create(first_name: "Guy", password: "password", cohort: cohort_2)
 
     jerry_1 = Project.create(name: "Cadence Tunes", owner: jerry, phase: phase_1, blog_link: "https://brownjer3.medium.com/spotifinding-your-ideal-running-playlist-394043d2745a", github_link: "https://github.com/brownjer3/cadence-tunes", youtube_link: "https://www.youtube.com/watch?v=RbdnoimSXjM")
     jerry_2 = Project.create(name: "Drive My Car", owner: jerry, phase: phase_2, blog_link: "https://brownjer3.medium.com/location-location-location-b6ed31ede71e", github_link: "https://github.com/brownjer3/drive-my-car", youtube_link: "https://www.youtube.com/watch?v=biFK6HEu2kg")
@@ -28,7 +31,9 @@
     joma_2 = Project.create(name: "Hogwarts Sinatra", owner: joma, phase: phase_2, blog_link: "https://jomapormentilla.medium.com/on-the-shoulders-of-giants-c4548131f159", github_link: "https://github.com/jomapormentilla/hogwarts-social-network-sinatra", youtube_link: "https://www.youtube.com/watch?v=tz2jQnL7T4I")
     reb_1 = Project.create(name: "Telly-Ho", owner: rebecca, phase: phase_1, blog_link: "https://medium.com/swlh/removing-characters-from-a-string-7a1486959df5", github_link: "https://github.com/rebeccahickson/telly-ho", youtube_link: "https://www.youtube.com/watch?v=tz2jQnL7T4I")
     reb_2 = Project.create(name: "Cowboy Up", owner: rebecca, phase: phase_2, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=tz2jQnL7T4I")
-    
+    nat_1 = Project.create(name: "Tap In", owner: natalia, phase: phase_1, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=6XwtTDsoejM")
+    dina_1 = Project.create(name: "Tome of Spells", owner: dina, phase: phase_1, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=v_ao8lBC4JM")
+    guy_1 = Project.create(name: "Hack Greenville Events", owner: guy, phase: phase_1, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=lgcr_sE4PzA")
 
     comment_1 = Comment.create(content: "This project is awesome!!", commenter: jerry, project: joma_1)
     comment_2 = Comment.create(content: "Super dope", commenter: joma, project: rob_2)
