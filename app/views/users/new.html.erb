@@ -1,13 +1,16 @@
 <div class="container">
     <%= content_tag(:h1, "Sign Up", class: "text-center") %>
     <br/><br/>
-    <div class="d-grid gap-2">
-        <%= button_tag type: "button", class: %w(btn btn-primary) do %>
-            <%= link_to "Continue with Google", '/auth/google_oauth2', class: "text-light" %>
-        <%  end %>
-    </div>
 
-<hr class="dropdown-divider">
+    <div class="d-grid gap-2 col-4 mx-auto">
+        <%= button_tag type: "button", class: %w(btn border border-primary) do %>
+            <%= image_tag 'google-icon.svg', height: '20', width: '20' %>
+            <%= link_to "Continue with Google", '/auth/google_oauth2', method: :post %>
+        <%  end %>
+        <button class="btn btn-primary" type="button">Future option (TBD)</button>
+    </div>
+    
+<hr class="mx-auto col-6">
 
 <%= content_tag(:p, "Or sign up with email", class: "text-center") %>
 
