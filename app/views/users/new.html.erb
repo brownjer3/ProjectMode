@@ -1,32 +1,16 @@
-<%= content_tag(:h1, "Sign Up", class: "text-center") %>
-<br/><br/>
-    <%= form_for(@user, url: "/signup") do |f| %>
-        <%= content_tag(:div, class: ["row", "g-3"]) do %>
-            <%= content_tag(:div, nil, class: "col-md-5") %>
-            <%= content_tag(:div, class: "col-md-5") do %>
-                <%= f.label :first_name %><br/>
-                <%= f.text_field :first_name %>
-                <br/><br/>
-                <% end %>
-            <%= content_tag(:div, nil, class: "col-md-2") %>
-            <%= content_tag(:div, nil, class: "col-md-5") %>
-            <%= content_tag(:div, class: "col-md-5") do %>
-                <%= f.label :email %><br/>
-                <%= f.email_field :email, require: true %>
-                <br/><br/>
-            <% end %>
-            <%= content_tag(:div, nil, class: "col-md-2") %>
-            <%= content_tag(:div, nil, class: "col-md-5") %>
-            <%= content_tag(:div, class: "col-md-5") do %>
-                <%= f.label :password %><br/>
-                <%= f.password_field :password %>
-                <br/><br/>
-            <% end %>
-            <%= content_tag(:div, nil, class: "col-md-2") %>
-            <%= content_tag(:div, nil, class: "col-md-5") %>
-            <%= content_tag(:div, nil, class: "col-md-5") do %>
-                <%= f.submit "Sign Up" %>
-            <% end %>
-        <% end %>
-    <% end %>
-    
+<div class="container">
+    <%= content_tag(:h1, "Sign Up", class: "text-center") %>
+    <br/><br/>
+    <div class="d-grid gap-2">
+        <%= button_tag type: "button", class: %w(btn btn-primary) do %>
+            <%= link_to "Continue with Google", '/auth/google_oauth2', class: "text-light" %>
+        <%  end %>
+    </div>
+
+<hr class="dropdown-divider">
+
+<%= content_tag(:p, "Or sign up with email", class: "text-center") %>
+
+<%= render "form" %>
+
+</div>
