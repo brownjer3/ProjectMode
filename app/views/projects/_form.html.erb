@@ -1,24 +1,46 @@
-<%= content_tag(:h1, "Create a New Project", class: "text-center") %>
-
-<%= form_for @project do |f| %>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name %><br/>
-
-    <%= f.label :desc %><br/>
-    <%= f.text_area :desc %><br/>
-
-    <%= f.label :phase %><br/>
-    <%= f.collection_select :phase_id, Phase.all, :id, :name %><br/>
-
-    <%= f.label :youtube_link %><br/>
-    <%= f.text_field :youtube_link %><br/>
-
-    <%= f.label :blog_link %><br/>
-    <%= f.text_field :blog_link %><br/>
-
-    <%= f.label :github_link %><br/>
-    <%= f.text_field :github_link %><br/>
-
-    <%= f.submit %>
-
-<% end %>
+    <%= form_for @project do |f| %>
+        <%= content_tag(:div, class: ["row", "g-3"]) do %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+                <%= f.text_field :name, class: "form-control", placeholder: "My awesome project" %>
+                <%= f.label :name %>
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+                <%= f.text_area :desc, class: "form-control", placeholder: "Loved every minute of it" %>
+                <%= f.label :desc %>
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+                <%= f.collection_select :phase_id, Phase.all, :id, :name, {}, {class: 'form-select'} %>
+                <%= f.label :phase %>
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+                <%= f.text_field :youtube_link, class: "form-control", placeholder: "https://www.youtube.com/watch?v=kWEqGoTSEYs" %>
+                <%= f.label :youtube_link %>
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+                <%= f.text_field :blog_link, class: "form-control", placeholder: "https://medium.com/@FlatironSchool" %>
+                <%= f.label :blog_link %>
+            <% end  %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+                <%= f.text_field :github_link, class: "form-control", placeholder: "https://github.com/flatiron-school" %>
+                <%= f.label :github_link %>
+            <% end  %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, class: %w(col-md-6)) do %>
+                <%= f.submit "Create", class: "form-control" %>
+            <% end  %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <br><br><br>
+        <% end %>
+    <% end %>
