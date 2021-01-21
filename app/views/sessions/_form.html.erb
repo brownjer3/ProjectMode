@@ -1,26 +1,22 @@
-<%= form_for(@user, url: "/signup") do |f| %> 
+<%= form_tag("/login", method: :post) do %>
     <%= content_tag(:div, class: ["row", "g-3"]) do %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-            <%= f.text_field :first_name, class: "form-control", placeholder: "Michael" %>
-            <%= f.label :first_name %>
+            <%= email_field_tag :email, nil, class: "form-control" %>
+            <%= label_tag :email %> 
         <% end %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-            <%= f.email_field :email, class: "form-control", placeholder: "Michael@DunderMifflin.com", require: true %>
-            <%= f.label :email %>
+            <%= password_field_tag :password, nil, class: "form-control" %>
+            <%= label_tag :password %>
         <% end %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-            <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-            <%= f.label :password %>
+            <%= submit_tag "Login", class: "btn btn-primary col-md-12" %>
         <% end %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
-        <%= content_tag(:div, nil, class: "col-md-3") %>
-        <%= content_tag(:div, nil, class: "col-md-6") do %>
-            <%= f.submit "Sign Up", class: "form-control" %>
-        <% end %>
     <% end %>
 <% end %>
+

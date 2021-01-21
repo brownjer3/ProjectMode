@@ -1,7 +1,9 @@
 <div class="container">
     <%= content_tag(:h1, "Sign Up", class: "text-center") %>
-    <br/><br/>
-
+    <%= content_tag(:p, class: "text-center") do %>
+        <small>Already signed up? <%= link_to "Login", '/login' %></small>
+    <% end %>
+    <br>
     <div class="d-grid gap-2 col-4 mx-auto">
         <%= button_tag type: "button", class: %w(btn border border-primary) do %>
             <%= image_tag 'google-icon.svg', height: '20', width: '20' %>
@@ -9,7 +11,7 @@
         <%  end %>
         <button class="btn btn-primary" type="button">Future option (TBD)</button>
     </div>
-    
+<br> 
 <hr class="mx-auto col-6">
 
 <%= content_tag(:p, "Or sign up with email", class: "text-center") %>
