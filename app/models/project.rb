@@ -7,7 +7,8 @@ class Project < ApplicationRecord
   has_many :likers, through: :likes, source: :user
 
   
-  scope :five_most_liked, -> { joins(:likes).group(:id).order(Arel.sql("COUNT(project_id) DESC")).limit(5)}
+  scope :five_most_liked, -> { joins(:likes).group(:id).order(Arel.sql("COUNT(project_id) DESC")).limit(4)}
+  scope :phase, -> (phase_number) {where("phase_id = ?", phase_number).take(4)}
 end
 
  
