@@ -39,9 +39,7 @@ class ProjectsController < ApplicationController
     end
 
     private
-    def find_project #could make this a before action for most actions in this controller
-        @project = Project.find_by(id: params[:id])
-    end
+
 
     def project_params
         params.require(:project).permit(:user, :name, :desc, :phase_id, :youtube_link, :github_link, :blog_link)

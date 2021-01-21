@@ -1,0 +1,25 @@
+<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add Comment
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Say something nice!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <%= form_tag("/comments", method: :post) do %>
+        <%= hidden_field_tag 'project_id', project.id %>
+            <%= content_tag(:div, class: %w(form-floating mb-3)) do %>
+                <%= text_field_tag :content, nil, class: "form-control" %>
+                <%= label_tag :content %> 
+            <% end %>
+            </div>
+            <div class="modal-footer">
+                <%= submit_tag "Comment", class: %w(btn btn-primary) %>
+            </div>
+        <% end %>
+        </div>
+    </div>
+</div>

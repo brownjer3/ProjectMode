@@ -1,1 +1,3 @@
 <%= render partial: "project", locals: {project: @project} %>
+<%= @project.comments.count %>
+<%= render partial: "comments/modal", locals: {project: @project} %>
