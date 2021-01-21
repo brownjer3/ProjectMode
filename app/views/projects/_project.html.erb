@@ -5,19 +5,21 @@
 </div>
 <% end %>
 
-<div class="card w-25 border-0">
-<iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
-    <div class="card-body">
-        <%= content_tag(:h5, class: "card-text") do %>
-            <%= link_to project.name, project_path(project) %>
-        <% end %>
-        <%= link_to project.owner.first_name, user_path(project.owner), class: "card-text" %>
-        <%= content_tag(:p, project.desc, class: "card-text") %>
-        
-        <%= link_to "blog", project.blog_link, class: "card-text" %>
-        <%= link_to "github", project.github_link, class: "card-text" %>
+<div class="col">
+    <div class="card border-0">
+    <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+        <div class="card-body">
+            <%= content_tag(:h5, class: "card-text") do %>
+                <%= link_to project.name, project_path(project) %>
+            <% end %>
+            <%= link_to project.owner.first_name, user_path(project.owner), class: "card-text" %>
+            <%= content_tag(:p, project.desc, class: "card-text") %>
+            
+            <%= link_to "blog", project.blog_link, class: "card-text" %>
+            <%= link_to "github", project.github_link, class: "card-text" %>
+        </div>
+        <div class="text-muted d-flex justify-content-between">
+                <%= link_to display_phase_pill(project.phase), phase_path(project.phase) %>
+        </div> 
     </div>
-    <div class="text-muted d-flex justify-content-between">
-            <%= link_to display_phase_pill(project.phase), phase_path(project.phase) %>
-    </div> 
 </div>
