@@ -6,12 +6,10 @@
 <% end %>
 
     <div class="card border-0">
-
         <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
-
         <div class="card-body border p-2">
             <div class="d-flex justify-content-between">
-                <%= render partial: "likes/button", locals: {project: @project} %>
+                <%= render partial: "likes/button", locals: {project: project} %>
                 <span>
                 <%= content_tag(:small, class: %w(card-text text-muted)) do %>
                     <%= likers_modal(project)  %>
@@ -35,7 +33,7 @@
                 <%= link_to display_phase_pill(project.phase), phase_path(project.phase) %>
         </div> 
     </div>
-</div>
+
 
 
 <%= render partial: "likes/likers_modal", locals: {project: project} %>

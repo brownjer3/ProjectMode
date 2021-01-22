@@ -4,7 +4,7 @@ class LikesController < ApplicationController
         @like = Like.new(project_id: params[:project_id])
         @like.user = current_user
         if @like.save
-            redirect_to project_path(@like.project)
+            redirect_back(fallback_location: root_path)
         else
             redirect_to '/'
         end
