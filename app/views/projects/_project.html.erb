@@ -12,11 +12,9 @@
         <div class="card-body border p-2">
             <span>
             <%= content_tag(:small, class: %w(card-text text-muted)) do %>
-                <%= like_count(project) %>
-                <%= likers_modal %>
+                <%= likers_modal(project)  %>
                  | 
-                <%= comment_count(project) %>
-                <%= commenters_modal %>
+                <%= commenters_modal(project) %>
             <% end %>
             </span>
         </div>

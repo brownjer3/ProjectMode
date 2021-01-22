@@ -1,4 +1,4 @@
-<div class="modal fade" id="likers" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="likers<%=project.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
         <ul class="list-group">
-            <% project.likers.each do |user| %>
+            <% project.likers.uniq.each do |user| %>
                 <li class="list-group-item">
                     <%= display_avatar(user) %>
                     <%= link_to display_name(user), user_path(user), class: "text-reset text-decoration-none" %>
