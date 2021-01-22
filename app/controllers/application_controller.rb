@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
     private
 
+    def log_user_in
+      session[:user_id] = @user.id
+    end
+
     def find_project #could make this a before action for most controller actions
         @project = Project.find_by(id: params[:id])
     end

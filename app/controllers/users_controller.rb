@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            session[:user_id] = @user.id
+            handle_photo(@user)
+            log_user_in
             redirect_to user_path(@user)
         else
             render :new
@@ -19,9 +20,28 @@ class UsersController < ApplicationController
         @projects = @user.projects
     end
 
+    def edit
+        @user = current_user
+    end
+
+    def update
+        if current_user.update(user_params)
+            handle_photo(current_user)
+            redirect_to user_path(current_user)
+        else
+            render :edit
+        end
+    end
+
 
     private 
     def user_params
         params.require(:user).permit(:first_name, :last_name, :email, :password)
     end
+    
+    def handle_photo(user)
+        user.photo.purge if user.photo.attached?
+        user.photo.attach(params[:photo])
+    end
+
 end

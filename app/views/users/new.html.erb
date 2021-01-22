@@ -7,24 +7,14 @@
     <div class="d-grid gap-2 col-3 mx-auto">
         <%= button_tag type: "button", class: %w(btn btn-primary) do %>
             <div class="d-flex justify-content-around align-items-center">
-                <%= fa_icon "google 2x" %>
+                <%= image_tag 'google-icon.svg', height: '30', width: '30' %>
                 <%= link_to "Continue with Google", '/auth/google_oauth2', method: :post, class:"text-white text-decoration-none" %>
                 <div></div>
             </div>
-        <%  end %>
-<%= button_tag type: "button", class: %w(btn btn-primary) do %>
-<div class="d-flex justify-content-around align-items-center">
-<%= image_tag 'google-icon.svg', height: '30', width: '30' %>
-<%= link_to "Continue with Google", '/auth/google_oauth2', method: :post, class:"text-white text-decoration-none" %>
-<div></div>
-</div>
-<%  end %>
+        <% end %>
     </div>
-<br> 
-<hr class="mx-auto col-6">
-
-<%= content_tag(:p, "Or sign up with email", class: "text-center") %>
-
-<%= render "form" %>
-
+    <br> 
+    <hr class="mx-auto col-6">
+    <%= content_tag(:p, "Or sign up with email", class: "text-center") %>
+    <%= render "form" %>
 </div>

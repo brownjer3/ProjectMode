@@ -8,6 +8,7 @@ class User < ApplicationRecord
   # for the lead
   # has_many :cohorts, foreign_key: "lead_id", class_name: "Cohort"
   has_secure_password 
+  has_one_attached :photo
 
   def self.create_google_user(auth)
     User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|

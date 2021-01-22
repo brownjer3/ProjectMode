@@ -1,0 +1,13 @@
+<%= content_tag(:div, nil, class: "col-md-3") %>
+<%= content_tag(:div, nil, class: "col-md-3") %>
+<%= content_tag(:div, class: %w(mb-3 col-md-6)) do %>
+    <%= f.label :photo %>
+    <%= f.file_field :photo, class: "form-control"%>
+<% end %>
+
+<%= content_tag(:div, nil, class: "col-md-3") %>
+<%= content_tag(:div, nil, class: "col-md-3") %>
+<%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+    <%= f.text_field :cohort, class: "form-control" %>
+    <%= f.label :cohort %>
+<% end %>
