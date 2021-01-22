@@ -5,20 +5,22 @@
 </div>
 <% end %>
 
-<div class="col">
     <div class="card border-0">
-    <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+
+        <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
 
         <div class="card-body border p-2">
-            <span>
-            <%= content_tag(:small, class: %w(card-text text-muted)) do %>
-                <%= likers_modal(project)  %>
-                 | 
-                <%= commenters_modal(project) %>
-            <% end %>
-            </span>
+            <div class="d-flex justify-content-between">
+                <%= render partial: "likes/button", locals: {project: @project} %>
+                <span>
+                <%= content_tag(:small, class: %w(card-text text-muted)) do %>
+                    <%= likers_modal(project)  %>
+                    | 
+                    <%= commenters_modal(project) %>
+                <% end %>
+                </span>
+            </div>
         </div>
-
         <div class="card-body">
             <%= content_tag(:h5, class: "card-text") do %>
                 <%= link_to project.name, project_path(project) %>
@@ -34,6 +36,7 @@
         </div> 
     </div>
 </div>
+
 
 <%= render partial: "likes/likers_modal", locals: {project: project} %>
 <%= render partial: "comments/commenters_modal", locals: {project: project} %>

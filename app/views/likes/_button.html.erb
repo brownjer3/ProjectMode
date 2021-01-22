@@ -1,13 +1,7 @@
-<%= content_tag(:p) do  %>
-    <%= "Like count: #{@project.likes.count}" %>
-<% end %>
-
-
 <%= form_tag("/likes", method: :post) do %>
     <%= hidden_field_tag 'project_id', project.id %>
-
     <%= button_tag type: "submit", class: "btn text-black-50" do %>
-        <%= fa_icon "thumbs-up 2x" %>
+        <%= fa_icon "thumbs-up" %>
     <% end %>
 <% end %>
 

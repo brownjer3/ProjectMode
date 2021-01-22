@@ -1,7 +1,8 @@
-<%= render partial: "project", locals: {project: @project} %>
-<%= @project.comments.count %>
+<div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+    <%= render partial: "project", locals: {project: @project} %>
+</div>
+
 <%= render partial: "comments/modal", locals: {project: @project} %>
 <br>
 <%= render partial: "likes/button", locals: {project: @project} %>
-
 
