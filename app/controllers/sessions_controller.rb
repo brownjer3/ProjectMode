@@ -11,10 +11,15 @@ class SessionsController < ApplicationController
     def create
         if @user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to root_path
         else
+            #flash?
             redirect_to login_path
         end
+    end
+
+    def signup_step_2
+        
     end
 
     def destroy

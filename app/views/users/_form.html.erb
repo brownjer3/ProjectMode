@@ -1,10 +1,15 @@
 <%= form_for(@user, url: "/signup") do |f| %> 
     <%= content_tag(:div, class: ["row", "g-3"]) do %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
-        <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+        <%= content_tag(:div, class: %w(form-floating mb-3 col-md-3)) do %>
             <%= f.text_field :first_name, class: "form-control", placeholder: "Michael" %>
             <%= f.label :first_name %>
         <% end %>
+        <%= content_tag(:div, class: %w(form-floating mb-3 col-md-3)) do %>
+            <%= f.text_field :last_name, class: "form-control", placeholder: "Scott" %>
+            <%= f.label :last_name %>
+        <% end %>
+
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>

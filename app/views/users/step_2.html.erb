@@ -1,0 +1,35 @@
+<div class="container">
+    <%= content_tag(:h1, "Just a few more details", class: "text-center") %>
+    <br>
+
+    <%= form_for(@user, url: "/signup") do |f| %> 
+        <%= content_tag(:div, class: ["row", "g-3"]) do %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+                <%= f.text_field :first_name, class: "form-control", placeholder: "Michael" %>
+                <%= f.label :first_name %>
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+                <%= f.email_field :email, class: "form-control", placeholder: "Michael@DunderMifflin.com", require: true %>
+                <%= f.label :email %>
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+                <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+                <%= f.label :password %>
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, nil, class: "col-md-6") do %>
+                <%= f.submit "Sign Up", class: "form-control" %>
+            <% end %>
+        <% end %>
+    <% end %>
+
+</div>
+
+image_tag
+Cohort info
