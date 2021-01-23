@@ -1,6 +1,8 @@
-<div class="row g-2">
+<div class="row">
+<div class="d-flex justify-content-around">
     <div class="col-3">
         <%= content_tag(:h1, display_name(@user), class: "display-3") %>
+        <%= render partial: "phases/list", locals: {user: @user} %>
     </div>
     <div class="col-6">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -52,4 +54,5 @@
         <%= link_to "Edit", edit_user_path, class: "btn btn-dark border-warning text-white" %>
         <%= link_to "Delete", user_path(@user), method: :delete, class: "btn btn-dark border-danger text-white" %>
     </div>
+</div>
 </div>
