@@ -1,5 +1,6 @@
+<%= content_tag(:h5, "Projects", class: "text-start") %>
 <ul class="list-unstyled text-start text-white">
     <% @user.projects.each do |project| %>
-        <li><%= project.phase.name %>: <%= link_to project.name, project_path(project), class: "text-decoration-none text-white" %></li>
+        <li><strong class='text-muted'><%= project.phase.name %>:</strong> <%= link_to project.name, project_path(project), class: "text-decoration-none text-white" %></li>
     <% end %>
 </ul>

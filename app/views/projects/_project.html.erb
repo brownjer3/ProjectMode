@@ -18,9 +18,17 @@
         <%= content_tag(:h5) do %>
             <%= link_to project.name, project_path(project), class: "text-reset text-decoration-none" %>
         <% end %>
-        <%= link_to display_name(project.owner), user_path(project.owner), class: "text-reset text-decoration-none" %>
-        <%= content_tag(:p, project.owner.cohort.focus, class: "text-reset text-decoration-none") %>
+        <div class='row'>
+            <div class='col-2'>
+                <%= display_avatar(project.owner) %>
+            </div>
+            <div class='col text-start ps-3'>
+                <%= link_to display_name(project.owner), user_path(project.owner), class: "text-reset text-decoration-none" %>
+                <%= content_tag(:p, project.owner.cohort.focus, class: "text-reset text-decoration-none") %>
+            </div>
+        </div>
     </div>
+
     <div class="d-flex justify-content-between ps-2">
             <%= link_to display_phase_pill(project.phase), phase_path(project.phase) %>
         <div>

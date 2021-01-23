@@ -12,7 +12,6 @@ module UsersHelper
         image_tag(avatar, class: %w(rounded-circle border border-2 border-secondary), height: '40', width: '40')
     end
 
-
     def display_name(user)
         "#{user.first_name} #{user.last_name}"
     end
