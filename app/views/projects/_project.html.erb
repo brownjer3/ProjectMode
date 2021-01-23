@@ -24,12 +24,12 @@
     <div class="d-flex justify-content-between ps-2">
             <%= link_to display_phase_pill(project.phase), phase_path(project.phase) %>
         <div>
-            <%= link_to project.blog_link, class: "text-white text-decoration-none" do %>
-                <%= fa_icon "rss" %>
-            <% end  %>
             <%= link_to project.github_link, class: "text-white text-decoration-none" do %>
                 <%= fa_icon "github" %>
             <% end %>
+            <%= link_to project.blog_link, class: "text-white text-decoration-none" do %>
+                <%= fa_icon "rss" %>
+            <% end  %>
         </div>
     </div> 
 </div>

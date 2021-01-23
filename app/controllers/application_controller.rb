@@ -10,8 +10,10 @@ class ApplicationController < ActionController::Base
       session[:user_id] = @user.id
     end
 
-    def find_project #could make this a before action for most controller actions
-        @project = Project.find_by(id: params[:id])
+    def homepage_login_check!
+      if !logged_in?
+        redirect_to home_path
+      end
     end
 
     def current_user

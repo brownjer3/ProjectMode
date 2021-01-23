@@ -44,9 +44,8 @@ class ProjectsController < ApplicationController
         params.require(:project).permit(:user, :name, :desc, :phase_id, :youtube_link, :github_link, :blog_link)
     end
 
-    def homepage_login_check!
-        if !logged_in?
-            redirect_to home_path
-        end
+    def find_project #could make this a before action for most controller actions
+        @project = Project.find_by(id: params[:id])
     end
+
 end
