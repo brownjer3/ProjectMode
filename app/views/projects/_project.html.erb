@@ -1,6 +1,6 @@
 <div class="card border-0 text-reset text-white bg-dark">
     <div class="ratio ratio-16x9">
-        <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+        <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0<%= youtube_attributes ||= nil %>' allowfullscreen></iframe>
     </div>
     <div class="card-body p-2">
         <div class="d-flex justify-content-between">

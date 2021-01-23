@@ -1,16 +1,12 @@
-<div class="row g-2">
-<div class="col">
+<div class="row">
+    <div class="col">
     Other projects from user.name
-</div>
-<div class="col-6">
-    <div class="ratio ratio-16x9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= youtube_id(@project) %>?rel=0" allowfullscreen>Alt text</iframe>
     </div>
-    <%= content_tag(:h1, @project.name) %>
+    <div class="col-6">
+        <%= render partial: "project", locals: {project: @project, youtube_attributes: "&autoplay=1&mute=1"} %>
+    </div>
+    <div class="col">
+        comments?
+    </div>
 </div>
-<div class="col">
-    comments?
-</div>
-</div>
-
 
