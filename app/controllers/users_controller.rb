@@ -37,12 +37,12 @@ class UsersController < ApplicationController
 
     private 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email, :password)
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :cohort_id)
     end
     
     def handle_photo(user)
         user.photo.purge if user.photo.attached?
-        user.photo.attach(params[:photo])
+        user.photo.attach(params[:user][:photo])
     end
 
 end
