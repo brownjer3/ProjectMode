@@ -1,12 +1,27 @@
 <div class="row">
     <div class="col">
-    Other projects from user.name
+    Display info about the user: Basic Info, other projects
     </div>
     <div class="col-6">
         <%= render partial: "project", locals: {project: @project, youtube_attributes: "&autoplay=1&mute=1"} %>
     </div>
     <div class="col">
-        comments?
+        <div class='container'>
+            <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 380px;">
+                <div class='p-2'>
+                    <p> Display comments up here</p>
+                </div>
+                <div class="mt-auto p-2">
+                    <%= render partial: "comments/modal", locals: {project: @project} %>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+
+<div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 200px;">
+  <div class="p-2 bd-highlight">Flex item</div>
+  <div class="p-2 bd-highlight">Flex item</div>
+  <div class="mt-auto p-2 bd-highlight">Flex item</div>
+</div>
