@@ -1,14 +1,14 @@
-<%= form_tag("/login", method: :post) do %>
+<%= form_tag(login_path, method: :post) do %>
     <%= content_tag(:div, class: ["row", "g-3"]) do %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-            <%= email_field_tag :email, nil, class: "form-control" %>
+            <%= email_field_tag :email, nil, class: "form-control", placeholder: "Michael@DunderMifflin.com" %>
             <%= label_tag :email %> 
         <% end %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-            <%= password_field_tag :password, nil, class: "form-control" %>
+            <%= password_field_tag :password, nil, class: "form-control", placeholder: "WorldsBestBoss" %>
             <%= label_tag :password %>
         <% end %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
