@@ -1,5 +1,5 @@
     <%= form_for @project do |f| %>
-        <%= content_tag(:div, class: ["row", "g-3"]) do %>
+        <%= content_tag(:div, class: "row g-3 text-dark") do %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
                 <%= f.text_field :name, class: "form-control", placeholder: "My awesome project" %>

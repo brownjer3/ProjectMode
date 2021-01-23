@@ -17,7 +17,7 @@
             <%= link_to project.name, project_path(project), class: "text-reset text-decoration-none" %>
         <% end %>
         <%= link_to project.owner.first_name, user_path(project.owner), class: "text-reset text-decoration-none" %>
-        <%= content_tag(:p, project.desc, class: "text-reset text-decoration-none") %>
+        <%= content_tag(:p, project.owner.cohort.focus, class: "text-reset text-decoration-none") %>
     
     </div>
 
