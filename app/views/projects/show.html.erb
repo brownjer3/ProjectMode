@@ -1,15 +1,12 @@
-<div class="row">
+<div class="row gx-5">
     <div class="col">
-    Display info about the user: Basic Info, other projects
+        <%= content_tag(:h1, @project.name, class: "display-3 text-start") %>
+        <%= content_tag(:p, @project.desc, class: "text-start") %>
     </div>
     <div class="col-6">
-        <%= render partial: "project", locals: {project: @project, youtube_attributes: "&autoplay=1&mute=1"} %>
-        <%= content_tag(:h1, @project.name, class: "display-2") %>
-        <ul>
-            <li>video</li>
-            <li>project details</li>
-            <li>user details</li>
-        </ul>
+        <div class="ratio ratio-16x9">
+            <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(@project) %>?rel=0&amp;autoplay=1&mute=1' allowfullscreen></iframe>
+        </div>
     </div>
     <div class="col">
         <div class='container'>
@@ -24,3 +21,4 @@
         </div>
     </div>
 </div>
+
