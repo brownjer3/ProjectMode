@@ -4,11 +4,34 @@
         <%= content_tag(:p, @project.desc, class: "text-start") %>
     </div>
     <div class="col-6">
-        <div class="ratio ratio-16x9">
-            <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(@project) %>?rel=0&amp;autoplay=1&mute=1' allowfullscreen></iframe>
+        <div class="card border-0 text-reset text-white bg-dark">
+            <div class="ratio ratio-16x9">
+                <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(@project) %>?rel=0&amp;autoplay=1&mute=1' allowfullscreen></iframe>
+            </div>
+            <div class="card-body p-2">
+                <div class="d-flex justify-content-between">
+                    <%= render partial: "likes/button", locals: {project: @project} %>
+                    <span>
+                    <%= content_tag(:small, class: %w(card-text text-muted)) do %>
+                        <%= likers_modal(@project)  %>
+                        | 
+                        <%= commenters_modal(@project) %>
+                    <% end %>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col">
+        <%= content_tag(:h5, class: "text-start") do %>
+            <%= "#{@project.owner.first_name}'s other projects" %>
+        <% end  %>
+        <%= render partial: "users/projects", locals: {user: @project.owner} %>
+    </div>
+</div>
+
+
+
         <div class='container'>
             <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 500px;">
                 <div class='p-2'>
@@ -19,6 +42,8 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
+
+
+<%= render partial: "likes/likers_modal", locals: {project: @project} %>
+<%= render partial: "comments/commenters_modal", locals: {project: @project} %>

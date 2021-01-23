@@ -1,0 +1,5 @@
+<ul class="list-unstyled text-start text-white">
+    <% user.projects.each do |project| %>
+        <li><strong class='text-muted'><%= project.phase.name %>:</strong> <%= link_to project.name, project_path(project), class: "text-decoration-none text-white" %></li>
+    <% end %>
+</ul>
