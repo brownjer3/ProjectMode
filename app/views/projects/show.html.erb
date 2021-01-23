@@ -1,9 +1,16 @@
-<div class='d-flex justify-content-end mb-3'>
-    <%= link_to "Edit", edit_project_path(@project), class: ["btn", "btn-outline-success", "me-2"] %>
-    <%= link_to "Delete", project_path(@project), method: :delete, class: ["btn", "btn-outline-danger", "float-end"] %>
+<div class="row g-2">
+<div class="col">
+    Other projects from user.name
+</div>
+<div class="col-6">
+    <div class="ratio ratio-16x9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= youtube_id(@project) %>?rel=0" allowfullscreen>Alt text</iframe>
+    </div>
+    <%= content_tag(:h1, @project.name) %>
+</div>
+<div class="col">
+    comments?
+</div>
 </div>
 
-<div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
-    <%= render partial: "project", locals: {project: @project} %>
-</div>
 
