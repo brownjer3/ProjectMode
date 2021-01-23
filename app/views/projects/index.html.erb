@@ -1,12 +1,12 @@
 <%= content_tag(:h1, "Project Index Page") %>
 
     <div class="d-flex justify-content-between pt-3">
-        <%= content_tag(:h3, "Projects from your classmates") %>
+        <%= content_tag(:h3, "From your classmates") %>
         <%= content_tag(:p) do %>
             <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none" %>
         <% end %>
     </div>
-    <hr>
+    <hr class="mt-0">
     <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
         <%= render partial: "project", collection: projects(current_user.cohort) %>
     </div>
@@ -17,7 +17,7 @@
             <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none" %>
         <% end %>
     </div>
-<hr class="mx-auto">
+    <hr class="mt-0">
     <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
         <%= render partial: "project", collection: Project.five_most_liked %>
     </div>
@@ -28,7 +28,7 @@
             <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none" %>
         <% end %>
     </div>
-<hr class="mx-auto">
+    <hr class="mt-0">
     <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
         <%= render partial: "project", collection: Project.phase(43) %>
     </div>
@@ -39,7 +39,7 @@
             <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none" %>
         <% end %>
     </div>
-<hr class="mx-auto">
+    <hr class="mt-0">
     <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
         <%= render partial: "project", collection: Project.phase(44) %>
     </div>
@@ -50,7 +50,7 @@
             <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none" %>
         <% end %>
     </div>
-<hr class="mx-auto">
+    <hr class="mt-0">
     <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
         <%= render partial: "project", collection: Project.phase(45) %>
     </div>
@@ -61,7 +61,7 @@
             <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none" %>
         <% end %>
     </div>
-<hr class="mx-auto">
+    <hr class="mt-0">
     <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
         <%= render partial: "project", collection: Project.phase(46) %>
     </div>
@@ -72,7 +72,7 @@
             <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none" %>
         <% end %>
     </div>
-<hr class="mx-auto">
+    <hr class="mt-0">
     <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
         <%= render partial: "project", collection: Project.phase(47) %>
     </div>
