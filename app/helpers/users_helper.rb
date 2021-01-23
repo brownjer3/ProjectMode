@@ -1,6 +1,6 @@
 module UsersHelper
 
-    def display_avatar(user)
+    def avatar(user)
         avatar = nil
         if user.photo.attached?
           avatar = url_for(user.photo)
@@ -9,7 +9,11 @@ module UsersHelper
         else
           avatar = 'technologist_avatar.png'
         end
-        image_tag(avatar, class: %w(rounded-circle border border-2 border-secondary), height: '40', width: '40')
+        avatar
+    end
+
+    def display_avatar(user)
+        image_tag(avatar(user), class: %w(rounded-circle border border-2 border-secondary), height: '40', width: '40')
     end
 
     def display_name(user)

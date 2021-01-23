@@ -1,6 +1,18 @@
 <div class="row gx-5">
     <div class="col">
         <%= content_tag(:h1, @project.name, class: "display-3 text-start") %>
+        <div class='col-6'>
+            <div class="d-flex justify-content-around">
+                <%= link_to display_phase_pill(@project.phase), phase_path(@project.phase, class: "m-0") %>
+                <%= link_to @project.github_link, class: "text-white text-decoration-none" do %>
+                    <%= fa_icon "github" %>
+                <% end %>
+                <%= link_to @project.blog_link, class: "text-white text-decoration-none" do %>
+                    <%= fa_icon "rss" %>
+                <% end  %>
+            </div> 
+        </div>
+
         <%= content_tag(:p, @project.desc, class: "text-start") %>
     </div>
     <div class="col-6">
@@ -41,9 +53,10 @@
         </div>
     </div>
 
-    <div class="col">
-        <%= content_tag(:h5, class: "text-start") do %>
-            <%= "#{@project.owner.first_name}'s other projects" %>
+    <div class="col text-start">
+        <%= image_tag(avatar(@project.owner), class: %w(rounded-circle border border-2 border-secondary), height: '120', width: '120') %>
+        <%= content_tag(:h5, class: "text-start pt-2") do %>
+            <%= "#{@project.owner.first_name}'s other projects:" %>
         <% end  %>
         <%= render partial: "users/projects", locals: {user: @project.owner} %>
     </div>
