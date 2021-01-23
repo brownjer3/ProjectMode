@@ -1,38 +1,31 @@
-<% if false %>
-<div class='d-flex justify-content-end mb-3'>
-    <%= link_to "Edit", edit_project_path(project), class: ["btn", "btn-outline-success", "me-2"] %>
-    <%= link_to "Delete", project_path(project), method: :delete, class: ["btn", "btn-outline-danger", "float-end"] %>
-</div>
-<% end %>
-
-    <div class="card border-0">
-        <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
-        <div class="card-body border p-2">
-            <div class="d-flex justify-content-between">
-                <%= render partial: "likes/button", locals: {project: project} %>
-                <span>
-                <%= content_tag(:small, class: %w(card-text text-muted)) do %>
-                    <%= likers_modal(project)  %>
-                    | 
-                    <%= commenters_modal(project) %>
-                <% end %>
-                </span>
-            </div>
-        </div>
-        <div class="card-body">
-            <%= content_tag(:h5, class: "card-text") do %>
-                <%= link_to project.name, project_path(project) %>
+<div class="card border-0 text-reset text-white bg-dark">
+    <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+    <div class="card-body p-2">
+        <div class="d-flex justify-content-between">
+            <%= render partial: "likes/button", locals: {project: project} %>
+            <span>
+            <%= content_tag(:small, class: %w(card-text text-muted)) do %>
+                <%= likers_modal(project)  %>
+                 | 
+                <%= commenters_modal(project) %>
             <% end %>
-            <%= link_to project.owner.first_name, user_path(project.owner), class: "card-text" %>
-            <%= content_tag(:p, project.desc, class: "card-text") %>
-            
-            <%= link_to "blog", project.blog_link, class: "card-text" %>
-            <%= link_to "github", project.github_link, class: "card-text" %>
+            </span>
         </div>
-        <div class="text-muted d-flex justify-content-between">
-                <%= link_to display_phase_pill(project.phase), phase_path(project.phase) %>
-        </div> 
     </div>
+    <div class="card-body d-flex flex-column align-items-start">
+        <%= content_tag(:h5) do %>
+            <%= link_to project.name, project_path(project), class: "text-reset text-decoration-none" %>
+        <% end %>
+        <%= link_to project.owner.first_name, user_path(project.owner), class: "text-reset text-decoration-none" %>
+        <%= content_tag(:p, project.desc, class: "text-reset text-decoration-none") %>
+        
+        <%= link_to "blog", project.blog_link, class: "text-reset text-decoration-none" %>
+        <%= link_to "github", project.github_link, class: "text-reset text-decoration-none" %>
+    </div>
+    <div class="text-muted d-flex justify-content-between">
+            <%= link_to display_phase_pill(project.phase), phase_path(project.phase) %>
+    </div> 
+</div>
 
 
 
