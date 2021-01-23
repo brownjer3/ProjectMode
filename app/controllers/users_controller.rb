@@ -40,8 +40,10 @@ class UsersController < ApplicationController
     end
     
     def handle_photo(user)
-        user.photo.purge if user.photo.attached?
-        user.photo.attach(params[:user][:photo])
+        if !params[:user][:photo].nil?
+            user.photo.purge if user.photo.attached?
+            user.photo.attach(params[:user][:photo])
+        end
     end
 
 end
