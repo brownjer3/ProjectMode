@@ -1,7 +1,7 @@
 <div class="container d-grid gap-2">
     <%= content_tag(:h1, "Sign Up") %>
     <%= content_tag(:small) do %>
-        Already signed up? <%= link_to "Login", '/login' %>
+        Already signed up? <%= link_to "Login", '/login', class: "text-reset" %>
     <% end %>
     <div class="d-grid gap-2 col-3 mx-auto">
         <%= button_tag type: "button", class: %w(btn btn-primary) do %>
@@ -12,7 +12,6 @@
             </div>
         <% end %>
     </div>
-
     <hr class="mx-auto col-6">
     <%= content_tag(:p, "Or sign up with email", class: "text-center") %>
     <%= render "form" %>

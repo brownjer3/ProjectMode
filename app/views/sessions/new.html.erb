@@ -5,14 +5,15 @@
         New here? <%= link_to "Sign Up", '/signup', class: "text-reset" %>
     <% end %>
     <div class="d-grid gap-2 col-3 mx-auto">
-    <%= button_tag type: "button", class: %w(btn btn-primary) do %>
-        <div class="d-flex justify-content-around align-items-center">
-            <%= image_tag 'google-icon.svg', height: '30', width: '30' %>
-            <%= link_to "Continue with Google", '/auth/google_oauth2', method: :post, class:"text-white text-decoration-none" %>
-            <div></div>
-        </div>
-    <% end %>
-<hr class="mx-auto col-6">
-<%= content_tag(:p, "Or login with email") %>
-<%= render "form" %>
+        <%= button_tag type: "button", class: %w(btn btn-primary) do %>
+            <div class="d-flex justify-content-around align-items-center">
+                <%= image_tag 'google-icon.svg', height: '30', width: '30' %>
+                <%= link_to "Continue with Google", '/auth/google_oauth2', method: :post, class:"text-white text-decoration-none" %>
+                <div></div>
+            </div>
+        <% end %>
+    </div>
+    <hr class="mx-auto col-6">
+    <%= content_tag(:p, "Or login with email") %>
+    <%= render "form" %>
 </div>
