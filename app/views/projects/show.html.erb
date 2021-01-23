@@ -20,6 +20,10 @@
                     </span>
                 </div>
             </div>
+            <ul class='list-unstyled text-start px-3'><%= render partial: "comments/display_comments", locals: {project: @project} %></ul>
+            <div class="py-2">
+                <%= render partial: "comments/modal", locals: {project: @project} %>
+            </div>
         </div>
     </div>
     <div class="col">
@@ -29,21 +33,6 @@
         <%= render partial: "users/projects", locals: {user: @project.owner} %>
     </div>
 </div>
-
-
-
-        <div class='container'>
-            <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 500px;">
-                <div class='p-2'>
-                    <ul><%= render partial: "comments/display_comments", locals: {project: @project} %></ul>
-                </div>
-                <div class="mt-auto p-2">
-                    <%= render partial: "comments/modal", locals: {project: @project} %>
-                </div>
-            </div>
-        </div>
-
-
 
 <%= render partial: "likes/likers_modal", locals: {project: @project} %>
 <%= render partial: "comments/commenters_modal", locals: {project: @project} %>
