@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :projects, foreign_key: "owner_id", class_name: "Project"
-  has_many :comments, foreign_key: "commenter_id", class_name: "Comment"
-  has_many :likes
+  has_many :projects, foreign_key: "owner_id", class_name: "Project", dependent: :delete_all
+  has_many :comments, foreign_key: "commenter_id", class_name: "Comment", dependent: :delete_all
+  has_many :likes, dependent: :delete_all
   has_many :liked_projects, through: :likes, source: :project
   # for the student
   belongs_to :cohort, optional: true
