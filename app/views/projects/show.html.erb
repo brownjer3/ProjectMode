@@ -4,12 +4,18 @@
     </div>
     <div class="col-6">
         <%= render partial: "project", locals: {project: @project, youtube_attributes: "&autoplay=1&mute=1"} %>
+        <%= content_tag(:h1, @project.name, class: "display-2") %>
+        <ul>
+            <li>video</li>
+            <li>project details</li>
+            <li>user details</li>
+        </ul>
     </div>
     <div class="col">
         <div class='container'>
-            <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 380px;">
+            <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 500px;">
                 <div class='p-2'>
-                    <p> Display comments up here</p>
+                    <ul><%= render partial: "comments/display_comments", locals: {project: @project} %></ul>
                 </div>
                 <div class="mt-auto p-2">
                     <%= render partial: "comments/modal", locals: {project: @project} %>
@@ -17,11 +23,4 @@
             </div>
         </div>
     </div>
-</div>
-
-
-<div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 200px;">
-  <div class="p-2 bd-highlight">Flex item</div>
-  <div class="p-2 bd-highlight">Flex item</div>
-  <div class="mt-auto p-2 bd-highlight">Flex item</div>
 </div>

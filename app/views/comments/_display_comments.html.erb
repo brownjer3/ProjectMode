@@ -1,0 +1,8 @@
+<%= content_tag(:h3, "Comments") %>
+<% project.comments.each do |comment| %>
+    <li>
+    <%= display_avatar(comment.commenter) %>
+        <%= link_to display_name(comment.commenter), user_path(comment.commenter), class: "text-reset text-decoration-none" %>
+        <%= content_tag(:small, comment.content, class: "text-white") %>
+    </li>
+<% end %>
