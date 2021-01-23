@@ -14,5 +14,5 @@
     </div>
     <hr class="mx-auto col-6">
     <%= content_tag(:p, "Or sign up with email", class: "text-center") %>
-    <%= render "form" %>
+    <%= render partial: "form", locals: {submit_text: "Sign Up"} %>
 </div>
