@@ -7,15 +7,15 @@
         </div>
         <div class="modal-body">
         <%= form_tag("/comments", method: :post) do %>
-        <%= hidden_field_tag 'project_id', project.id %>
-            <%= content_tag(:div, class: %w(form-floating mb-3)) do %>
-                <%= text_field_tag :content, nil, class: "form-control" %>
-                <%= label_tag :content %> 
-            <% end %>
-            </div>
-            <div class="modal-footer">
-                <%= submit_tag "Comment", class: %w(btn btn-primary) %>
-            </div>
+            <%= hidden_field_tag 'project_id', project.id %>
+                <%= content_tag(:div, class: %w(form-floating mb-3)) do %>
+                    <%= text_field_tag :content, nil, class: "form-control" %>
+                    <%= label_tag :content %> 
+                <% end %>
+                </div>
+                <div class="modal-footer">
+                    <%= submit_tag "Comment", class: %w(btn btn-primary) %>
+                </div>
         <% end %>
         </div>
     </div>

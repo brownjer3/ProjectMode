@@ -54,7 +54,9 @@
     </div>
 
     <div class="col text-start">
-        <%= image_tag(avatar(@project.owner), class: %w(rounded-circle border border-2 border-secondary), height: '120', width: '120') %>
+        <%= link_to user_path(@project.owner) do %>
+            <%= image_tag(avatar(@project.owner), class: %w(rounded-circle border border-2 border-secondary), height: '120', width: '120') %>
+        <% end %>
         <%= content_tag(:h5, class: "text-start pt-2") do %>
             <%= "#{@project.owner.first_name}'s other projects:" %>
         <% end  %>
