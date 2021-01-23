@@ -1,19 +1,29 @@
 <div class="card border-0 text-reset text-white bg-dark">
     <div class="ratio ratio-16x9">
         <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0' allowfullscreen></iframe>
-    </div>
-    <div class="card-body p-2">
-        <div class="d-flex justify-content-between">
-            <%= render partial: "likes/button", locals: {project: project} %>
-            <span>
-            <%= content_tag(:small, class: %w(card-text text-muted)) do %>
-                <%= likers_modal(project)  %>
-                 | 
-                <%= commenters_modal(project) %>
-            <% end %>
-            </span>
+    </div>         
+        <div class="card-body pt-0">
+            <div class='row'>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-grid gap-2 d-md-flex align-items-center">
+                        <%= render partial: "likes/button", locals: {project: project} %>
+                        | 
+                        <button type="button" class="btn text-white px-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <%= fa_icon "comment" %>
+                        </button>
+                    </div>
+
+                    <div>
+                        <%= content_tag(:small, class: %w(card-text text-muted)) do %>
+                            <%= likers_modal(project)  %>
+                            | 
+                            <%= commenters_modal(project) %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+
     <div class="d-flex flex-column align-items-start ps-2">
         <%= content_tag(:h5) do %>
             <%= link_to project.name, project_path(project), class: "text-reset text-decoration-none" %>
@@ -43,5 +53,4 @@
 </div>
 <%= render partial: "likes/likers_modal", locals: {project: project} %>
 <%= render partial: "comments/commenters_modal", locals: {project: project} %>
-
 
