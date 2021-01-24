@@ -54,7 +54,7 @@
     </div>
 
     <div class="col-3 text-start">
-        <div class='row'>
+        <div class='row d-flex align-items-center'>
             <div class='col-6'>
                 <%= link_to user_path(@project.owner) do %>
                     <%= image_tag(avatar(@project.owner), class: %w(rounded-circle border border-2 border-secondary), height: '120', width: '120') %>

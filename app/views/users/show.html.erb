@@ -4,53 +4,22 @@
         <%= render partial: "projects", locals: {user: @user} %>
     </div>
     <div class="col-6">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
-            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="ratio ratio-16x9">
-                    <iframe class="d-block" src='https://www.youtube.com/embed/<%= youtube_id(current_user.projects.first) %>?rel=0<%= youtube_attributes ||= nil %>' allowfullscreen></iframe>
-                </div>
-                <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-            </div>
-            <div class="carousel-item">
-                <div class="ratio ratio-16x9">
-                    <iframe class="d-block" src='https://www.youtube.com/embed/<%= youtube_id(current_user.projects.first) %>?rel=0<%= youtube_attributes ||= nil %>' allowfullscreen></iframe>
-                </div>
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            </div>
-            <div class="carousel-item">
-                <div class="ratio ratio-16x9">
-                    <iframe class="d-block" src='https://www.youtube.com/embed/<%= youtube_id(current_user.projects.first) %>?rel=0<%= youtube_attributes ||= nil %>' allowfullscreen></iframe>
-                </div>
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </div>
-            </div>
+        <%= render partial: 'carousel', locals: {projects: @user.projects} %>
+
+        <div class='row'>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </a>
-        </div>
+
     </div>
     <div class="col-3 text-start">
-        <div class='row'>
+        <div class='row d-flex align-items-center'>
             <div class='col-6'>
                 <%= image_tag(avatar(@user), class: %w(rounded-circle border border-2 border-secondary), height: '120', width: '120') %>
             </div>

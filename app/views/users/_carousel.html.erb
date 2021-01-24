@@ -1,0 +1,25 @@
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+
+        <% projects.each_with_index do |project, i| %>
+            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<%=project.id%>" class="<%= "active" if i == 0 %>"></li>
+        <% end %>
+
+    </ol>
+    <div class="carousel-inner">
+
+    <% projects.each_with_index do |project, i| %>
+        <div class="carousel-item <%= "active" if i == 0 %>">
+            <div class="ratio ratio-16x9">
+                <iframe class="d-block" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0' allowfullscreen></iframe>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+                <%= content_tag(:h5, project.name) %>
+            </div>
+        </div>
+    <% end %>
+        
+    </div>
+
+</div>
+
