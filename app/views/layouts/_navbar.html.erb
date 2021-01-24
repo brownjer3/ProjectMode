@@ -1,20 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <%= link_to "Flatiron Project Mode", root_path, class: "navbar-brand" %>
+    <%= link_to "Flatiron Project Mode", root_path, class: "navbar-brand active", aria: {current: "page"} %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><%= link_to "Add Project", new_project_path, class: "nav-link" %></li>
         <li class="nav-item"><%= link_to "My Projects", user_path(current_user), class: "nav-link" %></li>
-        <li class="dropdown">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             Modules
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <% Phase.all.each do |phase|  %>
-              <li class="nav-link"><%= nav_link(phase) %></li>
+              <li><%= nav_link(phase) %></li>
             <% end  %>
           </ul>
         </li>
