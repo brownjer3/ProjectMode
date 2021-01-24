@@ -1,0 +1,8 @@
+<%= content_tag(:h3) do %>
+   <u>Creator</u>
+<% end %>
+<%= content_tag(:h5) do %>
+    <%= display_name(@project.owner) %>
+<% end  %>
+
+<small><%= link_to "View Profile", user_path(@project.owner), class: "text-white" %></small>

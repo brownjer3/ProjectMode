@@ -60,8 +60,10 @@
                     <%= image_tag(avatar(@project.owner), class: %w(rounded-circle border border-2 border-secondary), height: '120', width: '120') %>
                 <% end %>
             </div>
-            <%= owner_controls(@project.owner, @project, "project") %>
-
+            <div class='col-6'>
+                <%= owner_controls(@project.owner, @project, "project") %>
+            </div>
+        <hr class='mt-3'>
         <%= content_tag(:h5, class: "text-start pt-2") do %>
             <%= "#{@project.owner.first_name}'s other projects:" %>
         <% end  %>

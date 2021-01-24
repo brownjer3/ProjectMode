@@ -1,12 +1,10 @@
 <div class="row gx-5">
-    <div class="col-3">
-        <%= content_tag(:h1, display_name(@user), class: "display-3 text-start") %>
+    <div class="col-3 text-start">
+        <%= content_tag(:h1, display_name(@user), class: "display-3") %>
         <%= render partial: "projects", locals: {user: @user} %>
     </div>
     <div class="col-6">
         <%= render partial: 'carousel', locals: {projects: @user.projects} %>
-
-
     </div>
     <div class="col-3 text-start">
         <div class='row d-flex align-items-center'>
@@ -15,6 +13,7 @@
             </div>
             <%= owner_controls(@user, nil, "user") %>
         </div>
+        <hr>
             <%= content_tag(:p, @user.email, class: "pt-3") %>
             <%= content_tag(:p) do %>
                 Member Since: <%= display_date(@user.created_at) %>

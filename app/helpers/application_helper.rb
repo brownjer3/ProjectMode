@@ -7,6 +7,8 @@ module ApplicationHelper
     def owner_controls(user, project, local)
       if user == current_user && !project.nil?
         render partial: "projects/owner_buttons", locals: {local: project}
+      elsif user != current_user && !project.nil?
+        render partial: "projects/creator_info", locals: {local: project}
       elsif user == current_user && project.nil?
         render partial: "users/owner_buttons", locals: {local: user}
       end
