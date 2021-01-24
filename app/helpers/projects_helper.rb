@@ -14,4 +14,12 @@ module ProjectsHelper
         link_to "Add yours", new_project_path, class: "btn btn-light p-2"
     end
 
+    def welcome_message(user)
+        if user.projects.size == 0
+            "Welcome! To get started, please add a project from your course"
+        else
+            "Create a New Project"
+        end
+    end
+
 end

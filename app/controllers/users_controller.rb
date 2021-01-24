@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         if @user.save
             handle_photo(@user)
             log_user_in
-            redirect_to user_path(@user)
+            redirect_to new_project_path
         else
             render :new
         end
