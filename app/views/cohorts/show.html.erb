@@ -1,0 +1,10 @@
+<%= content_tag(:h1) do %>
+    <%= "#{display_cohort_name(@cohort)}" %>
+<% end %>
+<%= content_tag(:p) do %>
+    <%= lead_name(@cohort) %>
+<% end %>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <%= render partial: "projects/project", collection: @cohort.projects %>
+</div>
