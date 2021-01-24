@@ -5,9 +5,9 @@
     User.destroy_all
     Cohort.destroy_all
 
-    cohort_1 = Cohort.create(focus: "Software Engineering", start_date: Date.today-rand(10000))
-    cohort_2 = Cohort.create(focus: "Software Engineering", start_date: Date.today-rand(10000))
-    cohort_3 = Cohort.create(focus: "Data Science", start_date: Date.today-rand(10000))
+    cohort_1 = Cohort.create(focus: "Software Engineering", start_date: Date.new(2020, 10, 19), location: "Online", lead_name: "Jenn Hansen", pace: "Full-Time")
+    cohort_2 = Cohort.create(focus: "Software Engineering", start_date: Date.new(2020, 11, 11), location: "Online", lead_name: "Nick Doe", pace: "Full-Time")
+    cohort_3 = Cohort.create(focus: "Data Science", start_date: Date.new(2021, 01, 29), location: "New York City", lead_name: "Jenn Hansen", pace: "Part-Time")
 
     phase_1 = Phase.create(name: "CLI")
     phase_2 = Phase.create(name: "Sinatra")
@@ -15,13 +15,15 @@
     phase_4 = Phase.create(name: "Javascript")
     phase_5 = Phase.create(name: "Final")
     
-    jerry = User.create(first_name: "Jerry", email: "jbtest@test.com", password: "password", cohort: cohort_1)
-    joma = User.create(first_name: "Joma", password: "password", cohort: cohort_1)
-    rebecca = User.create(first_name: "Rebecca", password: "password", cohort: cohort_1)
-    robert = User.create(first_name: "Robert", password: "password", cohort: cohort_1)
-    natalia = User.create(first_name: "Natalia", password: "password", cohort: cohort_1)
-    dina = User.create(first_name: "Dina", password: "password", cohort: cohort_2)
-    guy = User.create(first_name: "Guy", password: "password", cohort: cohort_2)
+    jerry = User.create(first_name: "Jerry", last_name: "Brown", email: "jbtest@test.com", password: "password", cohort: cohort_1)
+    joma = User.create(first_name: "Joma", last_name: "Promentilla", password: "password", cohort: cohort_1)
+    rebecca = User.create(first_name: "Rebecca", last_name: "Hickson", password: "password", cohort: cohort_1)
+    robert = User.create(first_name: "Robert", last_name: "Shilcof", password: "password", cohort: cohort_1)
+    natalia = User.create(first_name: "Natalia", last_name: "Ryan", password: "password", cohort: cohort_1)
+    dina = User.create(first_name: "Dina", last_name: "Doe", password: "password", cohort: cohort_2)
+    guy = User.create(first_name: "Guy", last_name: "Doe", password: "password", cohort: cohort_2)
+    random = User.create(first_name: "Random", last_name: "Bot", password: "password", cohort: cohort_3)
+    random2 = User.create(first_name: "Random2", last_name: "Bot2", password: "password", cohort: cohort_3)
 
     jerry_1 = Project.create(name: "Cadence Tunes", owner: jerry, phase: phase_1, blog_link: "https://brownjer3.medium.com/spotifinding-your-ideal-running-playlist-394043d2745a", github_link: "https://github.com/brownjer3/cadence-tunes", youtube_link: "https://www.youtube.com/watch?v=RbdnoimSXjM")
     jerry_2 = Project.create(name: "Drive My Car", owner: jerry, phase: phase_2, blog_link: "https://brownjer3.medium.com/location-location-location-b6ed31ede71e", github_link: "https://github.com/brownjer3/drive-my-car", youtube_link: "https://www.youtube.com/watch?v=biFK6HEu2kg")
@@ -34,6 +36,15 @@
     nat_1 = Project.create(name: "Tap In", owner: natalia, phase: phase_1, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=6XwtTDsoejM")
     dina_1 = Project.create(name: "Tome of Spells", owner: dina, phase: phase_1, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=v_ao8lBC4JM")
     guy_1 = Project.create(name: "Hack Greenville Events", owner: guy, phase: phase_1, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=lgcr_sE4PzA")
+    random_1 = Project.create(name: "Hulu", owner: random, phase: phase_1, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=WR9GKQDKHMg")
+    random_2 = Project.create(name: "Netflix", owner: random, phase: phase_2, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=SwDXAK7-6SA")
+    random_3 = Project.create(name: "Venmo", owner: random, phase: phase_3, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=SKq0Q6avUFo")
+    random_4 = Project.create(name: "Headspce", owner: random, phase: phase_4, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=v5I_OTjH9fg")
+    random_5 = Project.create(name: "Flappy birds", owner: random, phase: phase_5, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=v5I_OTjH9fg")
+    random_6 = Project.create(name: "Tetris", owner: random2, phase: phase_1, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=5sxMqLjTv6k")
+    random_7 = Project.create(name: "Tesla Stock Tracker", owner: random2, phase: phase_2, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=ycPr5-27vSI")
+
+
 
     comment_1 = Comment.create(content: "This project is awesome!!", commenter: jerry, project: joma_1)
     comment_2 = Comment.create(content: "Super dope", commenter: joma, project: rob_2)
