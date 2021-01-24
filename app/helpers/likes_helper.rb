@@ -16,4 +16,17 @@ module LikesHelper
         end
     end
 
+    def like_count(project)
+        project.likes.count
+    end
+
+    def likers_modal(project)
+        likes = pluralize(project.likes.count, 'like')
+        if project.likes.size == 0 
+            likes
+        else
+            link_to likes, "#likers#{project.id}", class: %w(text-reset text-decoration-none fw-normal), data: {bs_toggle: "modal"}
+        end
+    end
+
 end
