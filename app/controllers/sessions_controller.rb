@@ -29,7 +29,6 @@ class SessionsController < ApplicationController
 
     def omniauth
         @user = User.create_google_user(auth)
-        byebug
         if @user.valid?
             log_user_in
             if @user.cohort_id.nil?

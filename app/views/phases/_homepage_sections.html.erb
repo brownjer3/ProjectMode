@@ -1,6 +1,6 @@
 
 <% @phases.each do |phase| %>
-    `<div class="d-flex justify-content-between pt-3">
+    <div class="d-flex justify-content-between pt-3">
     <%= content_tag(:h3, "Recent #{phase.name} Projects") %>
     <%= content_tag(:p) do %>
         <%= link_to "See all", phase_path(phase), class: "text-white text-decoration-none" %>

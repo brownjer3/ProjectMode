@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   def self.create_google_user(auth)
-    User.create do |u|
+    User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
       u.uid = auth['uid']
       u.provider = auth['provider']
       u.first_name = auth['info']['first_name']
@@ -20,6 +20,10 @@ class User < ApplicationRecord
       u.password = SecureRandom.hex(16)
       u.image = auth['info']['image']
     end
+  end
+
+  def has_projects?
+    self.projects.size == 0
   end
 
 end

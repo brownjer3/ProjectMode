@@ -25,9 +25,11 @@ class UsersController < ApplicationController
     end
 
     def update
-        if current_user.update(user_params)
+        if @user = current_user.update(user_params)
             handle_photo(current_user)
-            redirect_to user_path(current_user)
+            if current_user.projects.blank?
+                redirect_to new_project_path
+            end
         else
             render :edit
         end
