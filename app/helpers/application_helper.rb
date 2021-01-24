@@ -22,7 +22,7 @@ module ApplicationHelper
     end
 
     def display_date(date)
-      date.strftime("%B %e, %y")
+      date.strftime("%B %e, %Y")
     end
 
 end
