@@ -1,13 +1,19 @@
 <div class="d-flex h-100 text-center text-white bg-dark">
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
 
-<main class="px-3">
-<h1>HOMEPAGE</h1>
+        <main class="px-3">
 
-<%= render "sessions/stats" %>
+            <h1 class='display-3 pb-5'>If you build it, they will come.</h1>
 
-<p class="lead">hello?</p>
-</main>
-</div>
+            <div class='row'>
+            <div class='col-3'></div>
+                <div class='col-6'>
+                    <%= render partial: 'users/carousel', locals: {projects: Project.all.shuffle} %>
+                </div>
+                <div class='col-3'></div>
+            </div>
+
+        </main>
+    </div>
 </div>

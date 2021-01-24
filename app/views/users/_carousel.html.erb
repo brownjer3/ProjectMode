@@ -2,7 +2,7 @@
     <div class="carousel-inner">
 
         <% projects.each_with_index do |project, i| %>
-            <div class="carousel-item <%= "active" if i == 0 %>">
+            <div class="carousel-item <%= "active" if i == 0 %>" data-bs-interval="2000">
                 <div class="ratio ratio-16x9">
                     <iframe class="d-block" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0' allowfullscreen></iframe>
                 </div>
