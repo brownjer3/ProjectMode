@@ -32,9 +32,9 @@
                 <%= display_avatar(project.owner) %>
             </div>
             <div class='col-10'>
-                <div class='text-start ps-3'>
+                <div class='text-start ps-2'>
                     <%= link_to display_name(project.owner), user_path(project.owner), class: "text-reset text-decoration-none" %>
-                    <%= content_tag(:p, project.owner.cohort.focus, class: "text-reset text-decoration-none") %>
+                    <%= content_tag(:p, project.owner.cohort.focus, class: "text-reset text-decoration-none") || "BUG!!!!!" %>
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@
     phase_1 = Phase.create(name: "CLI")
     phase_2 = Phase.create(name: "Sinatra")
     phase_3 = Phase.create(name: "Rails")
-    phase_4 = Phase.create(name: "Rails & Javascript")
+    phase_4 = Phase.create(name: "Javascript")
     phase_5 = Phase.create(name: "Final")
     
     jerry = User.create(first_name: "Jerry", email: "jbtest@test.com", password: "password", cohort: cohort_1)

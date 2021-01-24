@@ -5,13 +5,13 @@ module ProjectsHelper
     end
 
     def empty_collection_hanlder
-        content_tag(:span, class: "row px-5") do 
+        content_tag(:span, class: "row p-5") do 
             "There are no projects here yet! #{add_project_button}".html_safe
         end
     end
 
     def add_project_button
-        link_to "Add yours", new_project_path, class: "btn btn-light p-2"
+        link_to "Add yours", new_project_path, class: "btn btn-light my-4"
     end
 
     def welcome_message(user)
