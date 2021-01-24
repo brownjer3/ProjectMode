@@ -1,0 +1,10 @@
+<div class="container d-grid gap-2">
+    <%= welcome_message_google(@user) %>
+    <hr class="mx-auto col-6">
+    <%= form_for @user do |f| %>
+        <%= content_tag(:div, class: "row g-3 text-dark") do %>
+            <%= render partial: "users/form_2", locals: {f: f} %>
+            <%= f.submit "Continue", class: "form-control btn btn-primary" %>
+        <% end  %>
+    <% end %>
+</div>

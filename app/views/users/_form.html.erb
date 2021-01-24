@@ -22,7 +22,7 @@
             <%= f.password_field :password, class: "form-control", placeholder: "WorldsBestBoss" %>
             <%= f.label :password %>
         <% end %>
-
+        <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= render partial: "form_2", locals: {f: f} %>
 
         <%= content_tag(:div, nil, class: "col-md-3") %>

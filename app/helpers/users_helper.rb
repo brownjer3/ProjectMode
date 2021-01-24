@@ -1,5 +1,11 @@
 module UsersHelper
 
+    def welcome_message_google(user)
+      content_tag :h3 do 
+        "Welcome #{user.first_name}! Just need a few more details"
+      end
+    end
+
     def avatar(user)
         avatar = nil
         if user.photo.attached?

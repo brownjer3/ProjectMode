@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   def self.create_google_user(auth)
-    User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
+    User.create do |u|
       u.uid = auth['uid']
       u.provider = auth['provider']
       u.first_name = auth['info']['first_name']

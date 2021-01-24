@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
         end
     end
 
-    def signup_step_2
+    def step_2
         
     end
 
@@ -28,23 +28,18 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        user = User.create_google_user(auth)
-        if user.valid?
-            session[:user_id] = user.id
-            redirect_to user_path(user)
+        @user = User.create_google_user(auth)
+        byebug
+        if @user.valid?
+            log_user_in
+            if @user.cohort_id.nil?
+                render "step_2"
+            else
+                redirect_to root_path
+            end
         else
             flash[:message] = user.errors.full_messages.join(", ")
-            redirect_to '/'
-        end
-    end
-
-    def canvas_omniauth
-        user = User.create_canvas_user(auth)
-        if user.valid?
-            session[:user_id] = user.id
-            redirect_to '/'
-        else
-            redirect_to '/'
+            redirect_to root_path
         end
     end
 
@@ -53,6 +48,12 @@ class SessionsController < ApplicationController
 
   def auth
     request.env['omniauth.auth']
+  end
+
+  def step_2
+    if @user.cohort_id.nil?
+        redirect_to "step_2"
+    end
   end
 
 end
