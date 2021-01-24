@@ -10,7 +10,19 @@ module CohortsHelper
 
     def lead_name(cohort)
         # cohort.lead.name ||= "Jenn"
-        "with Jenn"
+        "with Jenn Hansen"
+    end
+
+    def cohort_paces
+        ["Full-Time", "Part-Time", "Self-Paced"]
+    end
+
+    def cohort_locations
+        ["Online", "Austin", "Chicago", "Denver", "Houston", "New York", "San Francisco", "Seattle", "Washington, D.C."]
+    end
+
+    def cohort_focuses
+        ["Software Engineering", "Data Science", "Cybersecurity Analytics", "Cybersecurity Engineering"]
     end
 
 end
