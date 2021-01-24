@@ -4,13 +4,16 @@ module CohortsHelper
         cohort.projects.take(4)
     end
 
+    def format_start_date(date)
+        date.strftime("%D")
+    end
+
     def display_cohort_name(cohort)
-        "#{cohort.start_date} full-time #{cohort.focus}"
+        "#{format_start_date(cohort.start_date)} #{cohort.pace} #{cohort.focus} (#{cohort.location})"
     end
 
     def lead_name(cohort)
-        # cohort.lead.name ||= "Jenn"
-        "with Jenn Hansen"
+        cohort.lead_name
     end
 
     def cohort_paces

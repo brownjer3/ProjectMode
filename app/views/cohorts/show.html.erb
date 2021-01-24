@@ -2,10 +2,10 @@
     <div class='col-2'></div>
     <div class='col-8'>
         <%= content_tag(:h1) do %>
-            <%= "#{display_cohort_name(@cohort)}" %>
+            <%= display_cohort_name(@cohort) %>
         <% end %>
         <%= content_tag(:p) do %>
-            <%= lead_name(@cohort) %>
+            with <%= lead_name(@cohort) %>
         <% end %>
     </div>
     <div class='col-2'>
