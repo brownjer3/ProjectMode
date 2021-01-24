@@ -1,5 +1,5 @@
 <div class="row gx-5">
-    <div class="col">
+    <div class="col-3">
         <%= content_tag(:h1, @project.name, class: "display-3 text-start") %>
         <div class='col-6'>
             <div class="d-flex justify-content-around">
@@ -53,10 +53,15 @@
         </div>
     </div>
 
-    <div class="col text-start">
-        <%= link_to user_path(@project.owner) do %>
-            <%= image_tag(avatar(@project.owner), class: %w(rounded-circle border border-2 border-secondary), height: '120', width: '120') %>
-        <% end %>
+    <div class="col-3 text-start">
+        <div class='row'>
+            <div class='col-6'>
+                <%= link_to user_path(@project.owner) do %>
+                    <%= image_tag(avatar(@project.owner), class: %w(rounded-circle border border-2 border-secondary), height: '120', width: '120') %>
+                <% end %>
+            </div>
+            <%= owner_controls(@project.owner, @project, "project") %>
+
         <%= content_tag(:h5, class: "text-start pt-2") do %>
             <%= "#{@project.owner.first_name}'s other projects:" %>
         <% end  %>

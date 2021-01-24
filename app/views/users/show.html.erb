@@ -1,5 +1,5 @@
 <div class="row gx-5">
-    <div class="col-3 text-wrap">
+    <div class="col-3">
         <%= content_tag(:h1, display_name(@user), class: "display-3 text-start") %>
         <%= render partial: "projects", locals: {user: @user} %>
     </div>
@@ -49,8 +49,17 @@
         </a>
         </div>
     </div>
-    <div class="col-3">
-        <%= link_to "Edit", edit_user_path, class: "btn btn-dark border-warning text-white" %>
-        <%= link_to "Delete", user_path(@user), method: :delete, class: "btn btn-dark border-danger text-white" %>
+    <div class="col-3 text-start">
+        <div class='row'>
+            <div class='col-6'>
+                <%= image_tag(avatar(@user), class: %w(rounded-circle border border-2 border-secondary), height: '120', width: '120') %>
+            </div>
+            <%= owner_controls(@user, nil, "user") %>
+        </div>
+            <%= content_tag(:p, @user.email, class: "pt-3") %>
+            <%= content_tag(:p) do %>
+                Member Since: <%= display_date(@user.created_at) %>
+            <% end %>
+        
     </div>
 </div>
