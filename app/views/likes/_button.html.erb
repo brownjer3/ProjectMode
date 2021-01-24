@@ -1,7 +1,7 @@
-<%= form_tag("/likes", method: :post) do %>
+<%= form_tag("/likes", method: like_action(project)) do %>
     <%= hidden_field_tag 'project_id', project.id %>
     <%= button_tag type: "submit", class: "btn text-white p-0" do %>
         <%= fa_icon "thumbs-up" %>
     <% end %>
 <% end %>
-
+ 
