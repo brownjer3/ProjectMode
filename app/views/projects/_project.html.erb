@@ -2,28 +2,27 @@
     <div class="ratio ratio-16x9">
         <iframe class="card-img-top" src='https://www.youtube.com/embed/<%= youtube_id(project) %>?rel=0' allowfullscreen></iframe>
     </div>         
-        <div class="card-body pt-0">
-            <div class='row'>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="d-grid gap-2 d-md-flex align-items-center">
-                        <%= render partial: "likes/button", locals: {project: project} %>
-                        | 
-                        <button type="button" class="btn text-white px-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <%= fa_icon "comment" %>
-                        </button>
-                    </div>
+    <div class="card-body pt-0">
+        <div class='row'>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-grid gap-2 d-md-flex align-items-center">
+                    <%= render partial: "likes/button", locals: {project: project} %>
+                    | 
+                    <button type="button" class="btn text-white px-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <%= fa_icon "comment" %>
+                    </button>
+                </div>
 
-                    <div class="d-grid align-items-center">
-                        <%= content_tag(:small, class: %w(card-text text-muted)) do %>
-                            <%= likers_modal(project)  %>
-                            | 
-                            <%= commenters_modal(project) %>
-                        <% end %>
-                    </div>
+                <div class="d-grid gap-2 d-md-flex align-items-center">
+                    <%= content_tag(:small, class: %w(card-text text-muted)) do %>
+                        <%= likers_modal(project)  %>
+                        | 
+                        <%= commenters_modal(project) %>
+                    <% end %>
                 </div>
             </div>
         </div>
-
+    </div>
     <div class="d-flex flex-column align-items-start ps-2">
         <%= content_tag(:h5) do %>
             <%= link_to project.name, project_path(project), class: "text-reset text-decoration-none" %>
@@ -32,15 +31,17 @@
             <div class='col-2'>
                 <%= display_avatar(project.owner) %>
             </div>
-            <div class='col text-start ps-3'>
-                <%= link_to display_name(project.owner), user_path(project.owner), class: "text-reset text-decoration-none" %>
-                <%= content_tag(:p, project.owner.cohort.focus, class: "text-reset text-decoration-none") %>
+            <div class='col-10'>
+                <div class='text-start ps-3'>
+                    <%= link_to display_name(project.owner), user_path(project.owner), class: "text-reset text-decoration-none" %>
+                    <%= content_tag(:p, project.owner.cohort.focus, class: "text-reset text-decoration-none") %>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="d-flex justify-content-between ps-2">
-            <%= link_to display_phase_pill(project.phase), phase_path(project.phase) %>
+        <%= link_to display_phase_pill(project.phase), phase_path(project.phase) %>
         <div>
             <%= link_to project.github_link, class: "text-white text-decoration-none" do %>
                 <%= fa_icon "github" %>
