@@ -1,0 +1,13 @@
+
+<% @phases.each do |phase| %>
+    `<div class="d-flex justify-content-between pt-3">
+    <%= content_tag(:h3, "Recent #{phase.name} Projects") %>
+    <%= content_tag(:p) do %>
+        <%= link_to "See all", phase_path(phase), class: "text-white text-decoration-none" %>
+    <% end %>
+    </div>
+    <hr class="mt-0">
+    <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
+    <%= render(partial: "project", collection: projects(phase)) || empty_collection_hanlder %>
+    </div>
+<% end %>

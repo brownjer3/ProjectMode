@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
     def index
         homepage_login_check!
         @projects = Project.all
+        @phases = Phase.all
     end
 
     def show

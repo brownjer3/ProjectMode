@@ -1,9 +1,5 @@
 module CohortsHelper
 
-    def projects(cohort) # need to figure out how to turn this into a scope method
-        cohort.projects.take(4)
-    end
-
     def format_start_date(date)
         date.strftime("%D")
     end

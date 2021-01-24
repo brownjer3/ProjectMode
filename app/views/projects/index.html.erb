@@ -22,57 +22,6 @@
         <%= render(partial: "project", collection: Project.five_most_liked) || empty_collection_hanlder %>
     </div>
 
-    <div class="d-flex justify-content-between pt-3">
-        <%= content_tag(:h3, "Recent CLI Projects") %>
-        <%= content_tag(:p) do %>
-            <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none" %>
-        <% end %>
-    </div>
-    <hr class="mt-0">
-    <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
-        <%= render(partial: "project", collection: Project.phase(43)) || empty_collection_hanlder %>
-    </div>
 
-    <div class="d-flex justify-content-between pt-3">
-        <%= content_tag(:h3, "Recent Sinatra Projects") %>
-        <%= content_tag(:p) do %>
-            <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none"%>
-        <% end %>
-    </div>
-    <hr class="mt-0">
-    <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
-        <%= render(partial: "project", collection: Project.phase(44)) || empty_collection_hanlder %>
-    </div>
-
-    <div class="d-flex justify-content-between pt-3">
-        <%= content_tag(:h3, "Recent Rails Projects") %>
-        <%= content_tag(:p) do %>
-            <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none" %>
-        <% end %>
-    </div>
-    <hr class="mt-0">
-    <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
-        <%= render(partial: "project", collection: Project.phase(45)) || empty_collection_hanlder %>
-    </div>
-
-    <div class="d-flex justify-content-between pt-3">
-        <%= content_tag(:h3, "Recent Javascript Projects") %>
-        <%= content_tag(:p) do %>
-            <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none" %>
-        <% end %>
-    </div>
-    <hr class="mt-0">
-    <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
-        <%= render(partial: "project", collection: Project.phase(46)) || empty_collection_hanlder %>
-    </div>
-
-    <div class="d-flex justify-content-between pt-3">
-    <%= content_tag(:h3, "Recent Final Projects") %>
-        <%= content_tag(:p) do %>
-            <%= link_to "See all", cohort_path(current_user.cohort), class: "text-white text-decoration-none" %>
-        <% end %>
-    </div>
-    <hr class="mt-0">
-    <div class="row row-cols-1 row-cols-md-4 g-4 py-3">
-        <%= render(partial: "project", collection: Project.phase(47)) || empty_collection_hanlder %>
-    </div>
+    <%= render partial: "phases/homepage_sections" %>
+    

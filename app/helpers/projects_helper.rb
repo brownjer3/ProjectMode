@@ -4,6 +4,10 @@ module ProjectsHelper
         YouTubeAddy.extract_video_id(project.youtube_link)
     end
 
+    def projects(group) # need to figure out how to turn this into a scope method
+        group.projects.take(4)
+    end
+
     def empty_collection_hanlder
         content_tag(:span, class: "row p-5") do 
             "There are no projects here yet! #{add_project_button}".html_safe

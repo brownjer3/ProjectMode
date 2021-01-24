@@ -11,7 +11,7 @@ module PhasesHelper
             content_tag(:p, phase.name, class: ["badge", "rounded-pill", "bg-info", "text-dark"])
         elsif phase.name == "Rails"
             content_tag(:p, phase.name, class: ["badge", "rounded-pill", "bg-primary"])
-        elsif phase.name == "Rails & Javascript"
+        elsif phase.name == "Javascript"
             content_tag(:p, phase.name, class: ["badge", "rounded-pill", "bg-success"])
         elsif phase.name == "Final"
             content_tag(:p, phase.name, class: ["badge", "rounded-pill", "bg-danger"])
