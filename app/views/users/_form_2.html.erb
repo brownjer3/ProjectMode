@@ -6,7 +6,45 @@
 <% end %>
 <%= content_tag(:div, nil, class: "col-md-3") %>
 <%= content_tag(:div, nil, class: "col-md-3") %>
+
 <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-    <%= f.collection_select(:cohort_id, Cohort.all, :id, :focus, {}, {class: "form-select h-100"}) %>
+    <%= f.collection_select(:cohort_id, Cohort.all, :id, :name, {:prompt => true}, {class: "form-select h-100"}) %>
     <%= f.label :cohort %>
+<% end %>
+<%= content_tag(:div, nil, class: "col-md-3") %>
+
+<%= content_tag(:h3, "Can't find your cohort? Create it here", class:'col-md-12 text-white') %>
+
+
+<%= f.fields_for :cohort do |c| %>
+<%= content_tag(:div, nil, class: "col-md-3") %>
+    <%= content_tag(:div, class: %w(form-floating mb-3 col-md-4)) do %>
+        <%= c.select :focus, cohort_focuses, {:prompt => true}, {class: "form-select h-100"} %>
+        <%= c.label :focus %>
+    <% end %>
+
+    <%= content_tag(:div, class: %w(form-floating mb-3 col-md-2)) do %>
+        <%= c.date_field :start_date, class: "form-control h-100" %>
+        <%= c.label :start_date %>
+    <% end %>
+    <%= content_tag(:div, nil, class: "col-md-3") %>
+    <%= content_tag(:div, nil, class: "col-md-3") %>
+
+    <%= content_tag(:div, class: %w(form-floating mb-3 col-md-3)) do %>
+            <%= c.select :location, cohort_locations, {:prompt => true}, {class: "form-select h-100"} %>
+            <%= c.label :location %>
+    <% end %>
+
+    <%= content_tag(:div, class: %w(form-floating mb-3 col-md-3)) do %>
+            <%= c.select :pace, cohort_paces, {:prompt => true}, {class: "form-select h-100"} %>
+            <%= c.label :pace %>
+    <% end %>
+        <%= content_tag(:div, nil, class: "col-md-3") %>
+        <%= content_tag(:div, nil, class: "col-md-3") %>
+
+        <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+            <%= c.text_field :lead_name, class: "form-control", placeholder: "Jenn Hansen" %>
+            <%= c.label :lead_name, "Name of your cohort lead" %>
+    <% end %>
+    
 <% end %>

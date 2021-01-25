@@ -6,6 +6,8 @@ class CohortsController < ApplicationController
 
     def create
         @cohort = Cohort.new(cohort_params)
+        @cohort.name = "#{@cohort.start_date} #{@cohort.pace} #{@cohort.focus} (#{@cohort.location})"
+        @cohort.save
     end
 
     def show
@@ -14,7 +16,7 @@ class CohortsController < ApplicationController
 
     private
     def cohort_params
-        params.require(:cohort).permit(:focus, :start_date, :pace, :location, :lead)
+        params.require(:cohort).permit(:focus, :start_date, :pace, :location, :lead_name, :name)
     end
 
     def find_cohort

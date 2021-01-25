@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
     def new
         @user = User.new
+        @user.build_cohort
         render action: :new, layout: "layouts/logged_out"
     end
 
     def create
+        byebug
         @user = User.new(user_params)
         if @user.save
             handle_photo(@user)
@@ -43,7 +45,7 @@ class UsersController < ApplicationController
 
     private 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email, :password, :cohort_id)
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :cohort_id, cohort_attributes: [:focus, :start_date, :location, :pace, :lead_name])
     end
     
     def handle_photo(user)

@@ -8,6 +8,12 @@
     cohort_1 = Cohort.create(focus: "Software Engineering", start_date: Date.new(2020, 10, 19), location: "Online", lead_name: "Jenn Hansen", pace: "Full-Time")
     cohort_2 = Cohort.create(focus: "Software Engineering", start_date: Date.new(2020, 11, 11), location: "Online", lead_name: "Nick Doe", pace: "Full-Time")
     cohort_3 = Cohort.create(focus: "Data Science", start_date: Date.new(2021, 01, 29), location: "New York City", lead_name: "Jenn Hansen", pace: "Part-Time")
+    cohort_1.name = "10/19/2020 Full-Time Software Engineering (Online) - Jenn Hansen"
+    cohort_2.name = "10/19/2020 Full-Time Software Engineering (Online) - Nick Doe"
+    cohort_3.name = "10/19/2020 Full-Time Software Engineering (Online) - Jenn Hansen"
+    cohort_1.save
+    cohort_2.save
+    cohort_3.save
 
     phase_1 = Phase.create(name: "CLI")
     phase_2 = Phase.create(name: "Sinatra")
