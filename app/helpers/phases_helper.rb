@@ -18,4 +18,13 @@ module PhasesHelper
         end
     end
 
+    def phase_form_fields(f)
+        if @phase
+            f.hidden_field :phase_id, value: @phase.id
+        else
+            render partial: "projects/phase_field", locals: {f: f}
+        end
+    end
+    
+
 end

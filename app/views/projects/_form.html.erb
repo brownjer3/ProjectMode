@@ -1,4 +1,4 @@
-    <%= form_for @project do |f| %>
+    <%= form_for([@phase, @project]) do |f| %>
         <%= content_tag(:div, class: "row g-3 text-dark") do %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
@@ -11,12 +11,9 @@
                 <%= f.text_area :desc, class: "form-control h-100", placeholder: "Loved every minute of it" %>
                 <%= f.label :desc, "Description" %>
             <% end %>
-            <%= content_tag(:div, nil, class: "col-md-3") %>
-            <%= content_tag(:div, nil, class: "col-md-3") %>
-            <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-                <%= f.collection_select :phase_id, Phase.all, :id, :name, {}, {class: 'form-select'} %>
-                <%= f.label :phase %>
-            <% end %>
+
+            <%= phase_form_fields(f) %>                
+
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>

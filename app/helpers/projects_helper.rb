@@ -19,10 +19,12 @@ module ProjectsHelper
     end
 
     def welcome_message(user)
-        if user.projects.size == 0
-            "Welcome! To get started, please add a project from your course"
+        if @phase 
+            content_tag(:h1, "Add a #{@phase.name} Project")
+        elsif user.projects.size == 0
+            content_tag(:h1, "Welcome! To get started, please add a project from your course")
         else
-            "Create a New Project"
+            content_tag(:h1, "Add a Project")
         end
     end
 

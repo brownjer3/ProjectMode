@@ -15,15 +15,16 @@ Rails.application.routes.draw do
   #testing the error page
   get '/error', to: "application#error"
 
-  resources :users do
-    resources :likes, shallow: :true
-  end
-
-  resources :cohorts, only: [:new, :create, :show]
-  resources :phases, only: [:show]
+  resources :cohorts, only: [:new, :create, :show] 
   resources :comments, only: [:create, :destroy]
   resources :projects
-  resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
-  resource :likes, only: [:create, :destroy]
+  resources :users, only: [:new, :create, :show, :edit, :update, :destroy] do
+    resources :likes, only: [:index]
+  end
+  resources :phases, only: [:show] do
+    resources :projects, only: [:new, :create]
+  end
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+

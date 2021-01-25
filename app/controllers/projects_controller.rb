@@ -1,7 +1,11 @@
 class ProjectsController < ApplicationController
 
     def new
-        @project = Project.new
+        if params[:phase_id] && @phase = Phase.find_by(id: params[:phase_id])
+            @project = Project.new(phase_id: params[:phase_id])
+        else
+            @project = Project.new
+        end
     end
 
     def create

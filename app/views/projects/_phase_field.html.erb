@@ -1,0 +1,7 @@
+
+    <%= content_tag(:div, nil, class: "col-md-3") %>
+    <%= content_tag(:div, nil, class: "col-md-3") %>
+    <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+        <%= f.collection_select :phase_id, Phase.all, :id, :name, {}, {class: 'form-select'} %>
+        <%= f.label :phase, "Module" %>
+    <% end %>

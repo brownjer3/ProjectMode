@@ -32,7 +32,6 @@ module UsersHelper
           "Projects that #{@user.first_name} likes"
         end
       end
-
     end
     
 end

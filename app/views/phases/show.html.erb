@@ -1,7 +1,16 @@
-<%= content_tag(:h1, class: "text-center") do %>
-    <%= "#{@phase.name} Projects" %>
-<% end %>
-<hr>
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <%= render(partial: "projects/project", collection: @projects) || empty_collection_hanlder %>
-</div>
+<div class='row'>
+    <div class='col-3'></div>
+    <div class='col-6'>
+        <%= content_tag(:h1, class: "text-center") do %>
+            <%= "#{@phase.name} Projects" %>
+        <% end %>
+    </div>
+    <div class="col-3">
+        <%= link_to new_phase_project_path(@phase), class: "btn btn-light" do %>
+            <%= "Add your #{@phase.name} Project" %>
+        <% end %>
+    </div>
+    <hr>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <%= render(partial: "projects/project", collection: @projects) || empty_collection_hanlder %>
+    </div>
