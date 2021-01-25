@@ -25,5 +25,14 @@ module UsersHelper
     def display_name(user)
         "#{user.first_name} #{user.last_name}"
     end
+
+    def link_to_likes(user)
+      if user.likes.size > 0
+        link_to user_likes_path(@user), class: "text-white" do
+          "Projects that #{@user.first_name} likes"
+        end
+      end
+
+    end
     
 end

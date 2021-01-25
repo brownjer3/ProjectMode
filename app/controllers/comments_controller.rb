@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
         if @comment.save
             redirect_to project_path(Project.find(params[:project_id]))
         else
-            redirect_to '/'
+            redirect_to root_path
         end
     end
 

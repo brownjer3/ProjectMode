@@ -19,5 +19,6 @@
                 Member Since: <%= display_date(@user.created_at) %>
             <% end %>
             <%= content_tag(:p, @user.cohort.focus) %>
+            <%= link_to_likes(@user) %>
     </div>
 </div>
