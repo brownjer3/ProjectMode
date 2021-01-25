@@ -5,9 +5,7 @@ class CohortsController < ApplicationController
     end
 
     def create
-        @cohort = Cohort.new(cohort_params)
-        @cohort.name = "#{@cohort.start_date} #{@cohort.pace} #{@cohort.focus} (#{@cohort.location})"
-        @cohort.save
+
     end
 
     def show
@@ -20,7 +18,7 @@ class CohortsController < ApplicationController
     end
 
     def find_cohort
-        @cohort = Cohort.find_by(params[:id])
+        @cohort = Cohort.find_by(id: params[:id])
     end
 
 end

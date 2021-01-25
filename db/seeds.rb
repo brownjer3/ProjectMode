@@ -10,7 +10,7 @@
     cohort_3 = Cohort.create(focus: "Data Science", start_date: Date.new(2021, 01, 29), location: "New York City", lead_name: "Jenn Hansen", pace: "Part-Time")
     cohort_1.name = "10/19/2020 Full-Time Software Engineering (Online) - Jenn Hansen"
     cohort_2.name = "10/19/2020 Full-Time Software Engineering (Online) - Nick Doe"
-    cohort_3.name = "10/19/2020 Full-Time Software Engineering (Online) - Jenn Hansen"
+    cohort_3.name = "10/19/2020 Full-Time Software Engineering (Online) - Avi Flombaum"
     cohort_1.save
     cohort_2.save
     cohort_3.save
@@ -46,11 +46,10 @@
     random_2 = Project.create(name: "Netflix", owner: random, phase: phase_2, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=SwDXAK7-6SA")
     random_3 = Project.create(name: "Venmo", owner: random, phase: phase_3, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=SKq0Q6avUFo")
     random_4 = Project.create(name: "Headspce", owner: random, phase: phase_4, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=v5I_OTjH9fg")
-    random_5 = Project.create(name: "Flappy birds", owner: random, phase: phase_5, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=v5I_OTjH9fg")
+    random_5 = Project.create(name: "Flappy birds", owner: random, phase: phase_5, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=J_RNIsEJTV0")
     random_6 = Project.create(name: "Tetris", owner: random2, phase: phase_1, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=5sxMqLjTv6k")
-    random_7 = Project.create(name: "Tesla Stock Tracker", owner: random2, phase: phase_2, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=ycPr5-27vSI")
-
-
+    random_7 = Project.create(name: "Tesla Stock Tracker", owner: random2, phase: phase_2, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=1gBR0aDIZEw")
+    random_8 = Project.create(name: "Challenger", owner: random1, phase: phase_2, blog_link: "https://medium.com/better-programming/keeping-your-form-in-top-form-26e42fd973b2", github_link: "https://github.com/rebeccahickson/cowboy-up", youtube_link: "https://www.youtube.com/watch?v=J_RNIsEJTV0")
 
     comment_1 = Comment.create(content: "This project is awesome!!", commenter: jerry, project: joma_1)
     comment_2 = Comment.create(content: "Super dope", commenter: joma, project: rob_2)
