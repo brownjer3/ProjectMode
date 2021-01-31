@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   #testing the error page
   get '/error', to: "application#error"
 
+  resources :likes, only: [:create, :destroy]
   resources :cohorts, only: [:new, :create, :show] 
   resources :comments, only: [:create, :destroy]
   resources :projects

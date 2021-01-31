@@ -1,3 +1,14 @@
+<% if @user.errors.any? %>
+    <h2 class='text-danger'>Oops! <%= pluralize(@user.errors.count, "error")  %>:</h2>
+        <ul>
+            <% @user.errors.full_messages.each do |message| %>
+                <%= content_tag(:li, message, class: "list-unstyled") %>
+            <% end %>
+        </ul>
+<% end %>
+
+
+
 <%= form_for(@user) do |f| %> 
     <%= content_tag(:div, class: "row g-3 text-dark") do %>
         <%= content_tag(:div, nil, class: "col-md-3") %>

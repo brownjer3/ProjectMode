@@ -11,8 +11,12 @@ class User < ApplicationRecord
   has_one_attached :photo
   accepts_nested_attributes_for :cohort
 
+  validates :email, presence: true, uniqueness: true
+  validates :first_name, presence: true
+
+
   def cohort_attributes=(attributes)
-    if attributes.values.all? { |value| !value.nil? }
+    if attributes.values.all? { |value| !value.blank? }
       self.cohort = Cohort.new(attributes)
       self.cohort.name = "#{attributes[:start_date]} #{attributes[:pace]} #{attributes[:focus]} (#{attributes[:location]}) - #{attributes[:lead_name]}"
       self.cohort.save

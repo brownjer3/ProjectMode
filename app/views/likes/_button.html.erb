@@ -1,7 +1,15 @@
-<%= form_tag("/likes", method: like_action(project)) do %>
-    <%= hidden_field_tag 'project_id', project.id %>
-    <%= button_tag type: "submit", class: "btn p-0 #{like_toggle(project)}" do %>
-        <%= fa_icon "thumbs-up" %>
+<% if @like = already_liked(project) %>
+    <%= form_tag(like_path(@like), method: :delete) do %>
+        <%= hidden_field_tag 'project_id', project.id %>
+        <%= button_tag type: "submit", class: "btn p-0 #{like_toggle(project)}" do %>
+            <%= fa_icon "thumbs-up" %>
+        <% end %>
+    <% end %>
+<% else %>
+    <%= form_tag(likes_path, method: :post) do %>
+        <%= hidden_field_tag 'project_id', project.id %>
+        <%= button_tag type: "submit", class: "btn p-0 #{like_toggle(project)}" do %>
+            <%= fa_icon "thumbs-up" %>
+        <% end %>
     <% end %>
 <% end %>
- 

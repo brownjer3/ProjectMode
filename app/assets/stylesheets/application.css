@@ -33,3 +33,7 @@
     right: 0;
     top: 72%;
 }
+
+.field-with-errors input {
+    border: 1px solid red;
+  }

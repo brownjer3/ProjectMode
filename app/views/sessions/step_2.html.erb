@@ -4,7 +4,12 @@
     <%= form_for @user do |f| %>
         <%= content_tag(:div, class: "row g-3 text-dark") do %>
             <%= render partial: "users/form_2", locals: {f: f} %>
-            <%= f.submit "Continue", class: "form-control btn btn-primary" %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
+            <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
+                <%= f.submit "Continue", class: "form-control btn btn-primary" %>
+            <% end %>
+            <%= content_tag(:div, nil, class: "col-md-3") %>
         <% end  %>
     <% end %>
 </div>

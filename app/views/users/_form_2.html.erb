@@ -7,16 +7,17 @@
 <%= content_tag(:div, nil, class: "col-md-3") %>
 <%= content_tag(:div, nil, class: "col-md-3") %>
 
+<%= f.fields_for :cohort do |c| %>
 <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
     <%= f.collection_select(:cohort_id, Cohort.all, :id, :name, {:prompt => true}, {class: "form-select h-100"}) %>
-    <%= f.label :cohort %>
+    <%= f.label :cohort_id, "Cohort" %>
 <% end %>
 <%= content_tag(:div, nil, class: "col-md-3") %>
 
 <%= content_tag(:h3, "Can't find your cohort? Create it here", class:'col-md-12 text-white') %>
 
 
-<%= f.fields_for :cohort do |c| %>
+
 <%= content_tag(:div, nil, class: "col-md-3") %>
     <%= content_tag(:div, class: %w(form-floating mb-3 col-md-4)) do %>
         <%= c.select :focus, cohort_focuses, {:prompt => true}, {class: "form-select h-100"} %>

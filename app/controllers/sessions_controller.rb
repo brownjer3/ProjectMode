@@ -32,6 +32,7 @@ class SessionsController < ApplicationController
         if @user.valid?
             log_user_in
             if @user.cohort_id.nil?
+                @cohort = @user.build_cohort
                 render "step_2"
             else
                 redirect_to root_path

@@ -1,9 +1,22 @@
+<% if @project.errors.any? %>
+    <h2 class='text-danger'>Oops! <%= pluralize(@project.errors.count, "error")  %>:</h2>
+        <ul>
+            <% @project.errors.full_messages.each do |message| %>
+                <%= content_tag(:li, message, class: "list-unstyled") %>
+            <% end %>
+        </ul>
+<% end %>
+
+    
     <%= form_for([@phase, @project]) do |f| %>
         <%= content_tag(:div, class: "row g-3 text-dark") do %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-                <%= f.text_field :name, class: "form-control", placeholder: "My awesome project" %>
+                <%= f.text_field :name, class: "form-control", placeholder: "My awesome project"%>
                 <%= f.label :name, "Project Name" %>
+                    <div class="invalid-feedback">
+                        Please add a name for your project.
+                    </div>
             <% end %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, nil, class: "col-md-3") %>

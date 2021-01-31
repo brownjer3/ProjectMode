@@ -7,12 +7,13 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
+        handle_cohort
         if @user.save
             handle_photo(@user)
             log_user_in
             redirect_to new_project_path
         else
-            render :new
+            render action: :new, layout: "layouts/logged_out"
         end
     end
 
@@ -45,6 +46,12 @@ class UsersController < ApplicationController
     private 
     def user_params
         params.require(:user).permit(:first_name, :last_name, :email, :password, :cohort_id, cohort_attributes: [:focus, :start_date, :location, :pace, :lead_name])
+    end
+
+    def handle_cohort
+        if @user.cohort.nil?
+            @user.cohort = Cohort.find_by(id: params[:cohort_id])
+        end
     end
     
     def handle_photo(user)

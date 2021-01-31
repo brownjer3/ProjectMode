@@ -1,10 +1,14 @@
 module LikesHelper
 
-    def like_action(project)
-        if Like.find_by(project_id: project.id, user_id: current_user.id)
-            :delete
+    def already_liked(project)
+        Like.find_by(project_id: project.id, user_id: current_user.id)
+    end
+
+    def like_form_details(project)
+        if like = Like.find_by(project_id: project.id, user_id: current_user.id)
+            form_tag(like_path(like), method: :delete)
         else
-            :post
+            form_tag(likes_path, method: :post)
         end
     end
 
