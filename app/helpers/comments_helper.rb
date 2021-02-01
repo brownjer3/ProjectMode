@@ -4,6 +4,10 @@ module CommentsHelper
         project.comments.count
     end
 
+    def submit_comment_modal(project)
+        "#submit_comment#{project.id}"
+    end
+
     def commenters_modal(project)
         comments = pluralize(project.comments.count, 'comment')
         if project.comments.size == 0

@@ -8,14 +8,12 @@
                 <div class="d-grid gap-2 d-md-flex align-items-center">
                     <%= render partial: "likes/button", locals: {project: project} %>
                     | 
-                    <button type="button" class="btn text-white px-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <%= fa_icon "comment" %>
-                    </button>
+                    <%= render partial: "comments/button", locals: {project: project} %>
                 </div>
 
                 <div class="d-grid gap-2 d-md-flex align-items-center">
                     <%= content_tag(:small, class: %w(card-text text-muted)) do %>
-                        <%= likers_modal(project)  %>
+                        <%= likers_modal(project) %>
                         | 
                         <%= commenters_modal(project) %>
                     <% end %>
