@@ -15,6 +15,7 @@ class UsersController < ApplicationController
             log_user_in
             redirect_to new_project_path
         else
+            @user.build_cohort
             render action: :new, layout: "layouts/logged_out"
         end
     end
