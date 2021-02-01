@@ -29,6 +29,7 @@ gem 'httparty'
 gem 'youtube_addy'
 gem "omniauth-google-oauth2"
 gem 'font-awesome-rails'
+gem 'bullet', '~> 6.1', '>= 6.1.3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
