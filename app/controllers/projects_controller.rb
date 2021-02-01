@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+    skip_before_action :redirect_if_not_logged_in, only: [:index]
 
     def new
         if params[:phase_id] && @phase = Phase.find_by(id: params[:phase_id])
@@ -49,7 +50,7 @@ class ProjectsController < ApplicationController
         params.require(:project).permit(:user, :name, :desc, :phase_id, :youtube_link, :github_link, :blog_link)
     end
 
-    def find_project #could make this a before action for most controller actions
+    def find_project
         @project = Project.find_by(id: params[:id])
     end
 

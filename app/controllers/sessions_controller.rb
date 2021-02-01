@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
     layout "layouts/logged_out"
+    skip_before_action :redirect_if_not_logged_in
 
     def home
     end
@@ -19,7 +20,6 @@ class SessionsController < ApplicationController
     end
 
     def step_2
-        
     end
 
     def destroy

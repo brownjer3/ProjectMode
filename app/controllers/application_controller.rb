@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :redirect_if_not_logged_in
 
     def error
         render '/layouts/error'
@@ -13,6 +14,12 @@ class ApplicationController < ActionController::Base
     def homepage_login_check!
       if !logged_in?
         redirect_to home_path
+      end
+    end
+
+    def redirect_if_not_logged_in
+      if !logged_in?
+        redirect_to login_path
       end
     end
 

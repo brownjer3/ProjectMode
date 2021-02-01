@@ -1,4 +1,5 @@
 class PhasesController < ApplicationController
+
     def show
         find_phase
         @projects = @phase.projects
