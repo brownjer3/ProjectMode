@@ -6,7 +6,6 @@ class LikesController < ApplicationController
         if @like.save
             redirect_back(fallback_location: root_path)
         else
-            #error?
             redirect_to root_path
         end
     end
@@ -20,8 +19,8 @@ class LikesController < ApplicationController
     end
 
     def destroy
-        @like = Like.find_by(project_id: params[:project_id], user_id: current_user.id)
-        @like.destroy
+        like = Like.find_by(project_id: params[:project_id], user_id: current_user.id)
+        like.destroy
         redirect_back(fallback_location: root_path)
     end
 

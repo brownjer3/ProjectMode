@@ -1,7 +1,7 @@
 class PhasesController < ApplicationController
     def show
         find_phase
-        @projects = @phase.projects # think this is probably where i need to use a scope method
+        @projects = @phase.projects
     end
 
     private
