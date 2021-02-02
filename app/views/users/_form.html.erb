@@ -13,24 +13,24 @@
     <%= content_tag(:div, class: "row g-3 text-dark") do %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, class: %w(form-floating mb-3 col-md-3)) do %>
-            <%= f.text_field :first_name, class: "form-control", placeholder: "Michael" %>
+            <%= f.text_field :first_name, class: "form-control", placeholder: "[First Name]" %>
             <%= f.label :first_name %>
         <% end %>
         <%= content_tag(:div, class: %w(form-floating mb-3 col-md-3)) do %>
-            <%= f.text_field :last_name, class: "form-control", placeholder: "Scott" %>
+            <%= f.text_field :last_name, class: "form-control", placeholder: "[First Name]" %>
             <%= f.label :last_name %>
         <% end %>
 
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-            <%= f.email_field :email, class: "form-control", placeholder: "Michael@DunderMifflin.com", require: true %>
+            <%= f.email_field :email, class: "form-control", placeholder: "[Email]", require: true %>
             <%= f.label :email %>
         <% end %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, nil, class: "col-md-3") %>
         <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-            <%= f.password_field :password, class: "form-control", placeholder: "WorldsBestBoss" %>
+            <%= f.password_field :password, class: "form-control", placeholder: "[Password]" %>
             <%= f.label :password %>
         <% end %>
         <%= content_tag(:div, nil, class: "col-md-3") %>

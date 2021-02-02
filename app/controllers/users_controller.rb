@@ -21,15 +21,18 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find_by(id: params[:id])
+        @user = User.find(params[:id])
         @projects = @user.projects
     end
 
     def edit
-        @user = current_user
+        @user = User.find(params[:id])
+        authorize!
     end
 
     def update
+        @user = User.find(params[:id])
+        authorize!
         if @user = current_user.update(user_params)
             handle_photo(current_user)
             if current_user.projects.blank?
@@ -41,7 +44,9 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        current_user.destroy
+        @user = User.find(params[:id])
+        authorize!
+        @user.destroy
         redirect_to root_path
     end
 
@@ -61,6 +66,12 @@ class UsersController < ApplicationController
         if !params[:user][:photo].nil?
             user.photo.purge if user.photo.attached?
             user.photo.attach(params[:user][:photo])
+        end
+    end
+
+    def authorize!
+        if @user != current_user
+            redirect_to root_path
         end
     end
 

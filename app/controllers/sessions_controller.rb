@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     skip_before_action :redirect_if_not_logged_in
 
     def home
+        @projects = Project.all.shuffle
     end
 
     def new

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   #testing the error page
   get '/error', to: "application#error"
 
+  get '/users/:user_id/commented-projects', to: "projects#user_comments", as: "commented-projects"
+
   resources :likes, only: [:create, :destroy]
   resources :cohorts, only: [:new, :create, :show] 
   resources :comments, only: [:create, :destroy]

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :redirect_if_not_logged_in
+  rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
 
     def error
         render '/layouts/error'
@@ -30,5 +31,12 @@ class ApplicationController < ActionController::Base
     def logged_in?
       current_user != nil
     end
+
+    def handle_record_not_found
+      redirect_to :error
+    end
+
+
+    
 
 end

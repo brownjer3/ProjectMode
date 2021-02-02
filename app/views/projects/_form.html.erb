@@ -12,16 +12,13 @@
         <%= content_tag(:div, class: "row g-3 text-dark") do %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-                <%= f.text_field :name, class: "form-control", placeholder: "My awesome project"%>
+                <%= f.text_field :name, class: "form-control", placeholder: "[Project Name]"%>
                 <%= f.label :name, "Project Name" %>
-                    <div class="invalid-feedback">
-                        Please add a name for your project.
-                    </div>
             <% end %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-                <%= f.text_area :desc, class: "form-control h-100", placeholder: "Loved every minute of it" %>
+                <%= f.text_area :desc, class: "form-control h-100", placeholder: "[Project Description]" %>
                 <%= f.label :desc, "Description" %>
             <% end %>
 
@@ -30,19 +27,19 @@
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-                <%= f.text_field :youtube_link, class: "form-control", placeholder: "https://www.youtube.com/watch?v=kWEqGoTSEYs" %>
+                <%= f.text_field :youtube_link, class: "form-control", placeholder: "[YouTube Link]" %>
                 <%= f.label :youtube_link %>
             <% end %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-                <%= f.text_field :blog_link, class: "form-control", placeholder: "https://medium.com/@FlatironSchool" %>
+                <%= f.text_field :blog_link, class: "form-control", placeholder: "[Blog Link]" %>
                 <%= f.label :blog_link %>
             <% end  %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
             <%= content_tag(:div, class: %w(form-floating mb-3 col-md-6)) do %>
-                <%= f.text_field :github_link, class: "form-control", placeholder: "https://github.com/flatiron-school" %>
+                <%= f.text_field :github_link, class: "form-control", placeholder: "[Github Link]" %>
                 <%= f.label :github_link %>
             <% end  %>
             <%= content_tag(:div, nil, class: "col-md-3") %>
